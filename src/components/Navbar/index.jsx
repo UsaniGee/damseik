@@ -6,7 +6,7 @@ import Links from './Links'
 
 const Navbar = () => {
   return (
-    <Grid gridTemplateColumns={"auto auto"} justifyContent={"space-between"} p={10}>
+    <Grid gridTemplateColumns={"auto auto"} justifyContent={"space-between"} p={10} position={"fixed"} zIndex={10} bg={"white"} w={"full"} >
         <Logo />
          <Links />
     </Grid>

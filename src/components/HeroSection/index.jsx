@@ -10,21 +10,21 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
-    title: "Marine Services",
-    subtitle: "Learn. Grow. Lead.",
-    buttonText: "Explore", 
+    title: "Marine Support Services",
+    subtitle: "Dam Seik Services Limited have the ability to supply you with any number of barges on request to enable you maintain a steady flow of operations.",
+    // buttonText: "Explore", 
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744148635/19224_svfglc.jpg",
-    title: "Welcome to Damseik",
-    subtitle: "Leading Business School",
-    buttonText: "Learn More",
+    title: "Valve Services",
+    subtitle: "DAM SEIK SERVICES offers you the most up-to-date and advanced technical solutions for valve repair and production. It is our aim to offer unique products and support services.",
+    // buttonText: "Learn More",
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
-    title: "Welcome to RSUBS",
-    subtitle: "Learn. Grow. Lead.",
-    buttonText: "Explore", 
+    title: "Pipeline/ Pipeline Integrity",
+    subtitle: "Ultrasonic inspection Long Range Ultrasonic Testing (LRUT) is one of the latest technologies in pipeline integrity inspection which is now widely accepted in the oil and gas industry because of its versatility, real time data accuracy and cost effectiveness.",
+    // buttonText: "Explore", 
   },
 ];
 
@@ -69,6 +69,17 @@ const HeroSection = () => {
               h="100%"
               position="relative"
             >
+              <Box
+                position="absolute"
+                top={0}
+                right={0}
+                h="100%"
+                w="100%"
+                zIndex={1}
+                pointerEvents="none"
+              bg="radial-gradient(circle at right center, rgba(34, 197, 94, 0.35) 0%, rgba(34, 197, 94, 0.7) 30%, transparent 70%)"
+/>
+
               <MotionBox
                 key={activeIndex === index ? `slide-${index}` : undefined}
                 display="flex"
@@ -83,19 +94,20 @@ const HeroSection = () => {
                 variants={containerVariants}
                 initial="hidden"
                 animate={activeIndex === index ? "visible" : "hidden"}
+                zIndex={2}
               >
-                <MotionBox variants={childVariants}>
-                  <Heading fontSize={{ base: "xl", md: "53px" }} color="white" textShadow="2px 2px #000000">
+                <MotionBox variants={childVariants} mb={5}>
+                  <Heading fontSize={{ base: "xl", md: "53px" }} color="white" textShadow="2px 2px #000000" w={{md: "500px"}} >
                     {slide.title}
                   </Heading>
                 </MotionBox>
 
                 <MotionBox variants={childVariants}>
-                  <Text fontSize={{ base: "16px", md: "2xl" }} mt={2} color="white">
+                  <Text fontSize={{ base: "12px", md: "16px" }} mt={2} color="white" w={{md: "500px"}} textShadow="1px 1px #000000">
                     {slide.subtitle}
                   </Text>
                 </MotionBox>
-
+{/* 
                 <MotionBox variants={childVariants}>
                   <Link to="/about">
                     <Button
@@ -107,7 +119,7 @@ const HeroSection = () => {
                       {slide.buttonText}
                     </Button>
                   </Link>
-                </MotionBox>
+                </MotionBox> */}
               </MotionBox>
             </Box>
           </SwiperSlide>

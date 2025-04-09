@@ -3,7 +3,7 @@ import React from 'react'
 
 const Links = () => {
   return (
-   <Flex gap={14}>
+   <Flex gap={14} fontSize={"18px"} fontWeight={600}>
     <Text>About us</Text>
     <Text>Services</Text>
     <Text>Projects</Text>
