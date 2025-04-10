@@ -86,7 +86,7 @@ const HeroSection = () => {
                 flexDir="column"
                 position="absolute"
                 top="50%"
-                left={{ base: "20%", md: "10%" }}
+                left={{ base: "auto", md: "10%" }}
                 transform="translateY(-50%)"
                 // bg="rgba(255, 255, 255, 0.7)"
                 p={6}

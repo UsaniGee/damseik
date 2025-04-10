@@ -4,12 +4,12 @@ import React from 'react'
 
 const WhatWeDo = () => {
   return (
-    <Box p={24}>
+    <Box p={{md: 24, base: 5}}>
          <Grid gap={14}>
          <Text color={"#989898"}>
             OUR SERVICES
         </Text>
-        <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={10} justifyContent={"center"} px={10}>
+        <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={10} justifyContent={"center"} px={{md: 10, }}>
             <Box>
             {/* <SiGooglecloudspanner  fontSize={"100px"} color='red' /> */}
             {/* <Image src='https://res.cloudinary.com/dnu4lxiie/image/upload/v1744187339/Equipment-removebg-preview_kgophw.png' alt='' /> */}

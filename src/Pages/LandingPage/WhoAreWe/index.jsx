@@ -5,7 +5,7 @@ import LearnMoreButton from '../../../components/LearnMoreBtn'
 const WhoAreWe = () => {
   return (
     <Box bg={"#F5F5F5"}>
-        <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={24} gap={10}>
+        <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{md: 24, base: 5}} gap={10}>
            <Grid gap={14}>
                 <Text color={"#989898"}>
                     ABOUT US

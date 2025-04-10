@@ -27,7 +27,7 @@ const App = () => {
   )
  
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme  }>
     <RouterProvider router={router} />
     </ChakraProvider>
   )

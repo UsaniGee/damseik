@@ -17,7 +17,7 @@ const OurClientsCarousel = () => {
   const [spacing] = useToken("space", ["8"]);
 
   return (
-    <Box overflow="hidden" py={14} mx={20} bg="white">
+    <Box overflow="hidden" py={14} mx={{md: 24, base: 5}} bg="white">
       <Text fontSize="2xl" fontWeight="bold" mb={10} px={6}>
         Our Clients
       </Text>
