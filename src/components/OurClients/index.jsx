@@ -1,16 +1,18 @@
-import { Box, Text, useToken } from "@chakra-ui/react";
+import { Box, Image, Text, useToken } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
 
 const clientNames = [
-  "Client A",
-  "Client B",
-  "Client C",
-  "Client D",
-  "Client E",
-  "Client F",
-  "Client G",
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744171724/30642_asod8j.jpg",
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147612/3555_xudfsf.jpg",
+  },
 ];
 
 const OurClientsCarousel = () => {
@@ -33,8 +35,8 @@ const OurClientsCarousel = () => {
             repeat: Infinity,
             repeatType: "loop",
             ease: "linear",
-            duration: 50,
-            repeatDelay: 2, 
+            duration: 100,
+            repeatDelay: 0.1, 
           }}
         >
           {[...clientNames, ...clientNames].map((client, idx) => (
@@ -51,8 +53,9 @@ const OurClientsCarousel = () => {
             borderRadius="md"
             boxShadow="md"
             flexShrink={0}
+             backgroundImage={`url(${client.image})`}
           >
-            {client}
+             <Image src={client.image} alt={`Client ${idx}`} objectFit="contain" h="100%" />
           </Box>
           ))}
         </MotionBox>

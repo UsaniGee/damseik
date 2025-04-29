@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Grid, Image, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 import LearnMoreButton from '../../../components/LearnMoreBtn'
 
@@ -11,9 +11,11 @@ const WhoAreWe = () => {
                     ABOUT US
                 </Text>
                 <Text fontSize={"23px"}>
-                Dam Seik Services Limited is an indigenous oil and gas servicing company in Nigeria providing innovative and cost effective services that have panned the better of 16 years. The Company has well structured administrative, sales and technical departments, professionally equipped to attend to clients needs. Incorporated in Nigeria with head office located at #10 Second Avenue Federal Housing Estate Rumuemue, mile 4 ,Warehouse Plot 224 lyowuna Drive Trans Amadi Industrial Layout, PH. UK Office7 Linley Dell, stopsley Luton Bedfordshire Lu 28 TJUK, fax 01592612068.
+                Dam Seik Services Limited is an indigenous oil and gas servicing company in Nigeria providing innovative and cost effective services that have spanned the better of 36 years. The Company has well structured administrative, sales and technical departments, professionally equipped to attend to clients needs. 
                 </Text>
+               <Link href='/about'>
                <LearnMoreButton title={"LEARN MORE"} />
+               </Link>
            </Grid>
 
            {/* Image */}

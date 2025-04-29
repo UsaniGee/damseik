@@ -3,6 +3,42 @@ import { Box, Grid, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 
 const WhatWeDo = () => {
+    const Services = [
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        {
+            id: "",
+            title: ""
+        },
+        
+    ]
+    
   return (
     <Box p={{md: 24, base: 5}}>
          <Grid gap={14}>

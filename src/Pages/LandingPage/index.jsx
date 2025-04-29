@@ -4,7 +4,7 @@ import HeroSection from '../../components/HeroSection'
 import WhoAreWe from './WhoAreWe'
 import WhatWeDo from './WhatWeDo'
 import OurRecentProjects from './OurRecentprojects'
-import OurClientsCarousel from '../../components/ui'
+import OurClientsCarousel from '../../components/OurClients'
 
 const LandingPage = () => {
   return (
