@@ -3,12 +3,13 @@ import { Box, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Image } from "@c
 
 const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
   return (
-    <Box position="relative" w="100%" h={{ base: "300px", md: "400px" }}>
+    <Box position="relative" w="100%" h={{ base: "300px", md: "500px" }}>
       {/* Background Image */}
       <Image
         src={imageSrc}
         alt={title}
         objectFit="cover"
+        objectPosition={"center"}
         w="100%"
         h="100%"
         filter="brightness(50%)"
@@ -28,7 +29,7 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
           {title}
         </Text>
 
-        <Text w={{md: "500px"}} fontSize={{ base: "37px", md: "47px" }} fontWeight="bold" lineHeight={"50px"}>
+        <Text w={{md: "600px"}} fontSize={{ base: "30px", md: "40px" }} fontWeight="bold" lineHeight={"50px"}>
           {subtitle}
         </Text>
 

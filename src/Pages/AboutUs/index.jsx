@@ -4,6 +4,52 @@ import AboutHero from './AboutHero'
 import WhoAreWe from '../LandingPage/WhoAreWe'
 
 const AboutUs = () => {
+const clients = [
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg",
+     id: "Shell"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Total_ak3xt5.jpg",
+     id: "Total"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/NNPC_hxrs9q.jpg",
+     id: "NNPC"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Agip_qjkvha.jpg",
+    id: "Agip Oil"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Mobil_zbfvom.jpg",
+    id: " Mobil"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745940408/Juesco_b1ds4z.jpg",
+    id: "Juesco"
+  },
+]
+
+const partners = [
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745937585/topline_limited_logo_jtnmj7.jpg",
+    id: "Topline"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745937810/Serock_tavnle.jpg",
+    id: "Serock"
+  },
+  {
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745937663/doxa_int_l_engineering_services_ltd_logo_tpacab.jpg",
+    id: "Doxa"
+  },
+  {
+    image: "",
+    id: "Anikor",
+  }
+]
+
   return (
    <Box pt={{md: "82px", base: "110px"}} >
       <AboutHero />
@@ -81,17 +127,31 @@ const AboutUs = () => {
         </Grid>
 
         {/* Our Clients */}
-        <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} p={{md: 24, base: 5}} gap={10} bg={""}>
-        <Text color={"#989898"}>
+        <Grid  px={{md: 24, base: 5}} py={{md: 5, base: 5}} gap={10} bg={""}>
+        <Text color={"#989898"}> 
             OUR CLIENTS
           </Text>
+          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr 1fr"}} justifyContent={"center"} alignItems={"center"} gap={5}>
+            {clients.map((item, index) => (
+              <Grid key={index}>
+                <Image src={item.image} alt={item.id} />
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
 
         {/* Our Partners */}
-        <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} p={{md: 24, base: 5}} gap={10} bg={""}>
+        <Grid  px={{md: 24, base: 5}} py={{md: 14, base: 5}} gap={10} bg={""}>
         <Text color={"#989898"}>
             OUR PARTNERS
           </Text>
+          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr"}} justifyContent={"center"} alignItems={"center"} gap={5}>
+            {partners.map((item, index) => (
+              <Grid key={index} >
+                <Image src={item.image} alt={item.id} />
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
     </Box>
   )

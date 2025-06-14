@@ -32,6 +32,7 @@ const LearnMoreButton = (props) => {
       _hover={{
         _before: { left: "0%" },
       }}
+      border={props.border}
     >
       <Box
         position="relative"

@@ -7,7 +7,7 @@ const MediaHero = () => {
     imageSrc={"https://res.cloudinary.com/dnu4lxiie/image/upload/v1744251092/12709_lwy0ae.jpg"}
       title="MEDIA"
       subtitle="Media"
-      subtitle1=" Official news, events and statements from Dam Seik Limited."
+      subtitle1=" Images from previous jobs done from Dam Seik Limited."
       breadcrumb={[
         { label: "Home", link: "/" },
         { label: "Media", link: "/media" }

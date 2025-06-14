@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { chakra, Box, Button, Heading, Text } from "@chakra-ui/react";
+import { chakra, Box, Heading, Text } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Link } from "react-router-dom";
+
 
 const slides = [
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_3031_lflfbg.jpg",
     title: "Pipeline/ Pipeline Integrity",
     subtitle: "Ultrasonic inspection Long Range Ultrasonic Testing (LRUT) is one of the latest technologies in pipeline integrity inspection which is now widely accepted in the oil and gas industry because of its versatility, real time data accuracy and cost effectiveness.",
     // buttonText: "Explore", 
@@ -21,7 +21,7 @@ const slides = [
     // buttonText: "Explore", 
   },
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744148635/19224_svfglc.jpg",
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_2835_rjlteg.jpg",
     title: "Marine Support Services",
     subtitle: "DAM SEIK SERVICES offers you the most up-to-date and advanced technical solutions for valve repair and production. It is our aim to offer unique products and support services.",
     // buttonText: "Learn More",
@@ -89,7 +89,7 @@ const HeroSection = () => {
                 left={{ base: "auto", md: "10%" }}
                 transform="translateY(-50%)"
                 // bg="rgba(255, 255, 255, 0.7)"
-                p={6}
+                p={{md: 10, base: 4}}
                 borderRadius="md"
                 variants={containerVariants}
                 initial="hidden"
@@ -97,13 +97,13 @@ const HeroSection = () => {
                 zIndex={2}
               >
                 <MotionBox variants={childVariants} mb={5}>
-                  <Heading fontSize={{ base: "xl", md: "53px" }} color="white" textShadow="2px 2px #000000" w={{md: "500px"}} >
+                  <Heading fontSize={{ base: "40px", md: "53px" }} color="white" textShadow="2px 2px #000000" w={{md: "500px"}} >
                     {slide.title}
                   </Heading>
                 </MotionBox>
 
                 <MotionBox variants={childVariants}>
-                  <Text fontSize={{ base: "12px", md: "16px" }} mt={2} color="white" w={{md: "500px"}} textShadow="1px 1px #000000">
+                  <Text fontSize={{ base: "16px", md: "16px" }} mt={2} color="white" w={{md: "500px", base: "auto"}} textShadow="1px 1px #000000">
                     {slide.subtitle}
                   </Text>
                 </MotionBox>

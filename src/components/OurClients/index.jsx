@@ -5,13 +5,22 @@ const MotionBox = motion(Box);
 
 const clientNames = [
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg",
   },
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744171724/30642_asod8j.jpg",
+        image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Total_ak3xt5.jpg",
   },
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147612/3555_xudfsf.jpg",
+       image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/NNPC_hxrs9q.jpg",
+  },
+  {
+        image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Agip_qjkvha.jpg",
+  },
+  {
+      image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Mobil_zbfvom.jpg",
+  },
+  {
+       image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745940408/Juesco_b1ds4z.jpg",
   },
 ];
 
@@ -39,12 +48,12 @@ const OurClientsCarousel = () => {
             repeatDelay: 0.1, 
           }}
         >
-          {[...clientNames, ...clientNames].map((client, idx) => (
+          {[...clientNames, ...clientNames].map((client, id) => (
             <Box
-            key={idx}
-            minW="200px"
+            key={id}
+            // minW="200px"
             h="100px"
-            bg="gray.100"
+            bg="white"
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -53,9 +62,10 @@ const OurClientsCarousel = () => {
             borderRadius="md"
             boxShadow="md"
             flexShrink={0}
-             backgroundImage={`url(${client.image})`}
+            p={3}
+            //  backgroundImage={`url(${client.image})`}
           >
-             <Image src={client.image} alt={`Client ${idx}`} objectFit="contain" h="100%" />
+             <Image src={client.image} alt={`Client ${id}`} objectFit="contain" h="100%" />
           </Box>
           ))}
         </MotionBox>
