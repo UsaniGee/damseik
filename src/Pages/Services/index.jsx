@@ -23,41 +23,14 @@ const ourCoreServices = [
     title: "Well Services",   
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
   },
+  {
+    id: "production-chemical-services",
+    title: "Production Chemical Services ",   
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
+  },
   
 ];
 
-// const otherServices = [
-//   {
-//     id: "equipment-leasing",
-//     title: "Equipment Leasing",   
-//     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
-//   },
-//   {
-//     id: "coating-and-repair-products",
-//     title: "Coating and Repair Products(Advanced Mechanical Polymers)",
-//     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
-//   },
-//   {
-//     id: "process-instrumentation",
-//     title: "Process Instrumentation",
-//     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
-//   },
-//   {
-//     id: "quality-control-services",
-//     title: "Quality Control Services",
-//     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
-//   },
-//   { 
-//     id: "valve-services",
-//     title: "Valve Services",
-//     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
-//   },
-//   {
-//     id: "procurement",
-//     title: "Procurement Services",
-//     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744147578/3434_wqcjhd.jpg",
-//   },
-// ]
 
 const LearnMoreButton = ({ title, onClick }) => (
   <Button colorScheme="green" size="md" onClick={onClick}>
@@ -103,10 +76,8 @@ const Services = () => {
             objectFit="cover"
             transition="all 0.4s ease"
             _groupHover={{ height: "100%" }}
-            // position="relative"
           />
 
-          {/* Default Text Below Image */}
           <Box p={4} display={{ base: "flex", md: "flex" }} 
            position="absolute"
            top="0"

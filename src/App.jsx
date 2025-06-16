@@ -22,6 +22,7 @@ import WaterInjection from './Pages/Projects/WaterInjection'
 import WellInterventionProject from './Pages/Projects/WellIntervention'
 import HighPressurePumpProject from './Pages/Projects/HighPressurePumpProject'
 import NitrogenLiftProject from './Pages/Projects/NitrogenLiftProject'
+import ProductionChemicalServices from './Pages/Services/ProductionChemicalServices'
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
       <Route path='/services/marine-support-services' element={< MarineSupport/>} />
       <Route path='/services/procurement' element={< Procurement />} />
       <Route path='/services/well-service' element={< WellServices />} />
+       <Route path='/services/production-chemical-services' element={< ProductionChemicalServices />} />
       <Route path='projects/water-re-injection-project-umusadege-1-kwale-delta-state' element={< WaterInjection />} />
       <Route path='projects/well-intervention-rivers-state' element={< WellInterventionProject/>} />
       <Route path='projects/high-Pressure-pumping-support-for-coil-tubing-operation-rivers-state' element={< HighPressurePumpProject />} />

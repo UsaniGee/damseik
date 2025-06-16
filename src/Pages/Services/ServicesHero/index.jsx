@@ -65,6 +65,12 @@ const ServicesHero = () => {
         "Well Services",
       image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744231581/20797_rkfw8z.jpg"
     },
+     "/services/production-chemical-services": {
+      title: "OUR SERVICES",
+      subtitle:
+        "Production Chemical Services",
+      image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744231581/20797_rkfw8z.jpg"
+    },
   }
 
 
