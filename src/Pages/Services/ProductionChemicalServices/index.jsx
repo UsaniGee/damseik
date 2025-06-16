@@ -17,7 +17,7 @@ const ProductionChemicalServices  = () => {
      At Dam Seik Services Limited, we specialize in delivering tailored Production Chemical Services designed to keep your oil and gas operations running smoothly, efficiently, and safely.
       </Text>
        <Text fontSize={"16px"}>
-    In a complex industry where flow assurance, asset integrity, and production optimization are key, we work closely with you to select and apply specialized chemicals that match your unique conditions — from wellbore to pipeline and processing facilities.
+    In a complex industry where flow assurance, asset integrity, and production optimization are key, we work closely with you to select and apply specialized chemicals that match your unique conditions — from wellbore to pipeline and processing facilities. Our Services Include:
       </Text>
     <UnorderedList display="grid" gap={3}>
      <ListItem>
