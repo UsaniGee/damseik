@@ -12,19 +12,16 @@ const slides = [
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_3031_lflfbg.jpg",
     title: "Pipeline/ Pipeline Integrity",
     subtitle: "Ultrasonic inspection Long Range Ultrasonic Testing (LRUT) is one of the latest technologies in pipeline integrity inspection which is now widely accepted in the oil and gas industry because of its versatility, real time data accuracy and cost effectiveness.",
-    // buttonText: "Explore", 
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
     title: "Well Services",
     subtitle: "Dam Seik Services Limited have the ability to supply you with any number of barges on request to enable you maintain a steady flow of operations.",
-    // buttonText: "Explore", 
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_2835_rjlteg.jpg",
     title: "Marine Support Services",
     subtitle: "DAM SEIK SERVICES offers you the most up-to-date and advanced technical solutions for valve repair and production. It is our aim to offer unique products and support services.",
-    // buttonText: "Learn More",
   },
 ];
 
@@ -77,7 +74,7 @@ const HeroSection = () => {
                 w="100%"
                 zIndex={1}
                 pointerEvents="none"
-              bg="radial-gradient(circle at right center, rgba(34, 197, 94, 0.35) 0%, rgba(34, 197, 94, 0.7) 30%, transparent 70%)"
+              // bg="radial-gradient(circle at right center, rgba(34, 197, 94, 0.35) 0%, rgba(34, 197, 94, 0.7) 30%, transparent 70%)"
 />
 
               <MotionBox
