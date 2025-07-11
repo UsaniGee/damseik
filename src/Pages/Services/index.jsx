@@ -56,6 +56,7 @@ const Services = () => {
             OUR CORE SERVICES
         </Text>
         </Box>
+
     <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={10}  >
       {ourCoreServices.map((item, index) => (
         <MotionBox
@@ -81,7 +82,9 @@ const Services = () => {
             _groupHover={{ height: "100%" }}
           />
 
-          <Box p={4} display={{ base: "flex", md: "flex" }} 
+          <Box 
+           p={4} 
+           display={{ base: "flex", md: "flex" }} 
            position="absolute"
            top="0"
            left="0"
@@ -101,6 +104,7 @@ const Services = () => {
               {item.title}
             </Heading>
             <Text>{item.description}</Text>
+            {/* <LearnMoreButton title="Explore more" onClick={() => handleNavigate(item.id)}/> */}
           </Box>
 
           {/* Overlay on Hover */}
@@ -113,7 +117,7 @@ const Services = () => {
             p={5}
             color="white"
             bg="rgba(0, 0, 0, 0.4)"
-            display="flex"
+            display={{base: "flex", md: "flex"}}
             flexDir="column"
             justifyContent="center"
             alignItems="center"
