@@ -51,7 +51,7 @@ const partners = [
 ]
 
   return (
-   <Box pt={{md: "82px", base: "110px"}} >
+   <Box pt={{md: "82px", base: "65px"}} >
       <AboutHero />
       <Box bg={"#F5F5F5"}>
         <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{md: 24, base: 5}} gap={10} gri>

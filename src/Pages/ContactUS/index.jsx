@@ -5,7 +5,7 @@ import ContactForm from './ContactForm'
 
 const Contact = () => {
   return (
-   <Box pt={{md: "82px", base: "110px"}} >
+   <Box pt={{md: "82px", base: "65px"}} >
       <ContactHero />
       <Box p={{md: 24, base: 5}}>
          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={20}>
@@ -16,8 +16,8 @@ const Contact = () => {
             <Text>
             Head office located at #10 Second Avenue Federal Housing Estate Rumuemue, mile 4 ,Warehouse Plot 224 lyowuna Drive Trans Amadi Industrial Layout, PH.
             </Text>
-            <Text as="a" href="tel:+2348132755766">
-            (+234) (0) 813 275 5766
+            <Text as="a" href="tel:+2348033433350">
+            (+234) (0) 803 343 3350
             </Text>
             <Text as="a" color="red.600" href="mailto:inquiries@damseikservices.com">
               inquiries@damseikservices.com
@@ -30,8 +30,8 @@ const Contact = () => {
             <Text>
             UK Office7 Linley Dell,stopsley Luton Bedfordshire Lu 28 TJUK, fax 01592612068.
             </Text>
-            <Text as="a" href="tel:+2348132755766">
-            (+234) (0) 813 275 5766
+            <Text as="a" href="tel:+2348033433350">
+            (+234) (0)  803 343 3350
             </Text>
             <Text as="a" color="red.600" href="mailto:inquiries@damseikservices.com">
               inquiries@damseikservices.com

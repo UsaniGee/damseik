@@ -5,7 +5,7 @@ import React from 'react'
 const Footer = () => {
   return (
    <Box p={{md: 14, base: 5}} bg={"red.600"} >
-      <Grid fontWeight={600} gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr 1fr"}} justifyContent={{md: "center"}} px={{md: "100px"}} color={"white"} w={{base: "100px" , md: "100%"}} gap={10}>
+      <Grid fontWeight={600} gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr 1fr"}} justifyContent={{md: "center"}} px={{md: "100px"}} color={"white"} w={{base: "" , md: "100%"}} gap={10}>
       <NavLinks />
       </Grid>
        

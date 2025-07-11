@@ -48,7 +48,7 @@ const Services = () => {
   };
 
   return (
-    <Box pt={{md: "82px", base: "110px"}} >
+    <Box pt={{md: "82px", base: "65px"}} >
          <ServicesHero />
     <Box p={{md: 24, base: 10}} display={"grid"} justifyContent={"center"}>
     <Box  pb={{md: "50px", base: "20px"}} >

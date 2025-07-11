@@ -6,7 +6,7 @@ import LearnMoreButton from '../../components/LearnMoreBtn'
 
 const Projects = () => {
   return (
-    <Box pt={{md: "82px", base: "110px"}} >
+    <Box pt={{md: "82px", base: "65px"}} >
     <ProjectsHero />
     <Grid gridTemplateColumns={{md: '1fr 1fr 1fr'}} justifyContent={"center"} gap={5} p={{md: 24, base: 5}}>
             {projects.map((item, index) => (
