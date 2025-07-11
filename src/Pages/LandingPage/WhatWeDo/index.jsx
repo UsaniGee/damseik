@@ -1,5 +1,8 @@
 import { Box, Grid, Image, Link, Text } from '@chakra-ui/react'
 // import { SiGooglecloudspanner } from "react-icons/si";
+import { PiPipeWrenchFill } from "react-icons/pi";
+import { FaOilWell } from "react-icons/fa6";
+import { GiAnchor } from 'react-icons/gi'
 import React from 'react'
 
 const WhatWeDo = () => {
@@ -8,19 +11,22 @@ const WhatWeDo = () => {
             id: "services/pipeline-facility-production-maintenace",
             title: "Pipeline Maintenance",
             image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744187339/Equipment-removebg-preview_kgophw.png",
-            color: "red.200"
+            color: "red.200",
+            icon: <PiPipeWrenchFill />
         },
         {
-            id: "services/well-services",
+            id: "services/well-service",
             title: "Well Services",
             image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744187339/Equipment-removebg-preview_kgophw.png",
-            color: "green.200"
+            color: "green.200",
+            icon: <FaOilWell />
         },
         {
             id: "services/marine-support-services",
             title: "Marine Engineering & Vessel Manning",
             image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744187339/Equipment-removebg-preview_kgophw.png",
-             color: "red.200"
+             color: "red.200",
+             icon:<GiAnchor />
         },
         
     ]
@@ -35,65 +41,19 @@ const WhatWeDo = () => {
             {Services.map((item, index) => (
                 <Link key={index} href={item.id} textDecoration="none"
                 _hover={{ textDecoration: "none" }}>
-              <Grid justifyContent={"center"} alignItems={"center"}  bg={"gray.100"} _hover={{ bg: "white", transform: "scaleX(0.9)", cursor: "pointer", boxShadow: "lg", }} py={10} px={{base: 3}} borderRadius={"10px"} boxShadow={"2xl"} transition="transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)"> 
+              <Grid justifyContent={"center"} alignItems={"center"}  bg={"#F5F5F5"} 
+            //   _hover={{ bg: "#F5F5F5", transform: "scaleX(0.9)", cursor: "pointer",  }} 
+              py={10} px={{base: 3}} borderRadius={"10px"} h={"300px"} transition="transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)"> 
                <Grid justifyContent={"center"} alignItems={"center"}>
-               <Image h={"50px"} src={item.image} alt='' />
+               {/* <Image h={"50px"} src={item.image} alt='' /> */}
+               <p className='text-[100px] text-red-600'>{item.icon}</p>
                </Grid>
-                <Text textAlign={"center"} fontWeight={600} > 
+                <Text textAlign={"center"} fontWeight={600} fontSize={"1.25em"} className='text-green-900' > 
                     {item.title}
                 </Text>
               </Grid>
             </Link>
             ))}
-            {/* <Box>
-            <SiGooglecloudspanner  fontSize={"100px"} color='red' />
-            <Image src='https://res.cloudinary.com/dnu4lxiie/image/upload/v1744187339/Equipment-removebg-preview_kgophw.png' alt='' />
-            <Text >
-                Equipment Leasing
-            </Text>
-            </Box> */}
-            {/* <Box>
-                <Image src='' alt='' />
-                <Text>
-                    Coating and repair Products(Advanced Mechanical Polymers)
-                </Text>
-            </Box>
-            <Box>
-                 <Image src='' alt='' />
-                <Text>
-                    Process instrumentation
-                </Text>
-            </Box>
-            <Box>
-                 <Image src='' alt='' />
-                <Text>
-                    Quality Control Services
-                </Text>
-            </Box>
-            <Box>
-                 <Image src='' alt='' />
-                <Text>
-                    Pipeline Facility Production/Maintenance
-                </Text>
-            </Box>
-            <Box>
-                 <Image src='' alt='' />
-                <Text>
-                    Valve Services
-                </Text>
-            </Box>
-            <Box>
-                 <Image src='' alt='' />
-                <Text>
-                    Marine support service
-                </Text>
-            </Box>
-            <Box>
-                 <Image src='' alt='' />
-                <Text>
-                    Procurement
-                </Text>
-            </Box> */}
         </Grid>
          </Grid>
     </Box>

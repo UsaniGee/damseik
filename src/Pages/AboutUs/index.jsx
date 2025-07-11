@@ -77,6 +77,7 @@ const partners = [
                   objectFit="cover"
                   w="full"
                   h="full"
+                  borderRadius={"5%"}
                 />
 
                 {/* Overlay */}
@@ -86,7 +87,7 @@ const partners = [
                   right={0}
                   w="100%"
                   h="100%"
-                  bg="radial-gradient(circle at left center, rgba(34, 197, 94, 0.35) 0%, rgba(197, 34, 34, 0.7) 30%, transparent 80%)"
+                  // bg="radial-gradient(circle at left center, rgba(34, 197, 94, 0.35) 0%, rgba(197, 34, 34, 0.7) 30%, transparent 80%)"
                   pointerEvents="none"
                   zIndex={1}
                 />
@@ -118,7 +119,7 @@ const partners = [
               QUALITY POLICY
             </Text>
             <Box display={"grid"} gridTemplateColumns={{md: "1fr 1fr"}} gap={10} alignItems={"center"}>
-              <Image src='https://res.cloudinary.com/dnu4lxiie/image/upload/v1744955126/2149354008_nlrbbs.jpg' alt='Quality Policy'/>
+              <Image src='https://res.cloudinary.com/dnu4lxiie/image/upload/v1744955126/2149354008_nlrbbs.jpg' alt='Quality Policy' borderRadius={"5%"}/>
               <Text>
               It is the policy of DAM SEIK SERVICES LIMITED to provide an effective and efficient Engineering Installation, inspection, test and allied services that meet and exceed customer expectations, regulatory and statutory requirement at optimal cost and also to continually improve the Company Quality Management System for effectiveness. This Quality Policy is communicated, understood and implemented throughout the Company and is continually reviewed for continuing suitability.
 

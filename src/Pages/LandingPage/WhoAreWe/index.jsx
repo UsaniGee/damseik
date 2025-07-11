@@ -26,6 +26,7 @@ const WhoAreWe = () => {
                   objectFit="cover"
                   w="full"
                   h="full"
+                   borderRadius={"5%"}
                 />
 
                 {/* Overlay */}
@@ -35,7 +36,7 @@ const WhoAreWe = () => {
                   right={0}
                   w="100%"
                   h="100%"
-                  bg="radial-gradient(circle at left center, rgba(34, 197, 94, 0.35) 0%, rgba(197, 34, 34, 0.7) 30%, transparent 80%)"
+                  // bg="radial-gradient(circle at left center, rgba(34, 197, 94, 0.35) 0%, rgba(197, 34, 34, 0.7) 30%, transparent 80%)"
                   pointerEvents="none"
                   zIndex={1}
                 />

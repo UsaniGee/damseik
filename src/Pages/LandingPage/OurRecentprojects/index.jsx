@@ -17,7 +17,7 @@ export const projects = [
          id: "projects/high-Pressure-pumping-support-for-coil-tubing-operation-rivers-state"
     },
     {
-        image: "",
+        image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1752248671/IMG_0537_hbtoel.jpg",
         title: "Nitrogen Lift Operation – CAWC Well 45T, Rivers State Swamp",
         subTitle: "Dam Seik Services Ltd recently executed a nitrogen lift operation at CAWC Well 45T, located in the swamp terrain of Rivers State. The objective was to assist in unloading the well by displacing heavy fluid columns and enabling easier flowback, following a coil tubing intervention.",
         id: "projects/nitrogen-lift-operation-cawc-well-45T-rivers-state-swamp"
@@ -42,7 +42,27 @@ const OurRecentProjects = () => {
         <Grid gridTemplateColumns={{md: '1fr 1fr 1fr'}} justifyContent={"center"} gap={10}>
             {projects.slice(0,3)?.map((item, index) => (
                 <Grid key={index} gap={5}>
-                <Image h={"200px"} w={"full"} objectFit={"cover"} transition="transform 0.4s ease-in-out" _hover={{ transform: "scale(1.1)",  cursor: "pointer", }} src={item.image} alt='' />
+               <Box h={"300px"}  overflow="hidden">
+                 <Image 
+                 h={"300px"} 
+                 w={"600px"} 
+                 objectFit={"cover"} 
+                 transition="transform 0.4s ease-in-out"  
+                 _hover={{ transform: "scale(1.1)",  cursor: "pointer" }} 
+                 src={item.image} alt='' />
+               </Box>
+{/* 
+               <Box w="600px" h="200px" overflow="hidden">
+  <Image
+    w="600px"
+    h="200px"
+    objectFit="cover"
+    transition="transform 0.4s ease-in-out"
+    _hover={{ transform: "scale(1.1)", cursor: "pointer" }}
+    src={item.image}
+    alt=""
+  />
+</Box> */}
                 <Heading fontSize={"20px"}>
                 {item.title}
                 </Heading>

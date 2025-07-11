@@ -5,15 +5,18 @@ import React from 'react'
 const Footer = () => {
   return (
    <Box p={{md: 14, base: 5}} bg={"red.600"} >
-      <Grid fontWeight={600} gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr 1fr"}} justifyContent={{md: "center"}} px={{md: "300px"}} color={"white"} w={{base: "100px" , md: "100%"}}>
+      <Grid fontWeight={600} gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr 1fr"}} justifyContent={{md: "center"}} px={{md: "100px"}} color={"white"} w={{base: "100px" , md: "100%"}} gap={10}>
       <NavLinks />
       </Grid>
        
-      <Box textAlign={"center"} paddingTop={5} >
-           {/* Bottom Section */}
-           <div className="container mx-auto flex flex-col justify-between items-center">      
+      <Box textAlign={""} paddingTop={5} >
 
-           <Flex gap={4} justify="center" mt={4}>
+       
+           {/* Bottom Section */}
+           <div className="container mx-auto flex justify-between items-end">     
+       <div className='text-white'>Copyright &copy; 2025</div> 
+
+           <Flex gap={4} justify="" mt={4}>
   {/* Facebook */}
   <Link href="#" color="white" _hover={{ color: "blue.500" }}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -58,14 +61,15 @@ const Footer = () => {
 const NavLinks = ({ onClose }) => (
   <>
     {[
-      { name: 'About', href: '/about' },
-      { name: 'Services', href: '/services' },
-      { name: 'Project', href: '/projects' },
-      { name: 'Careers', href: 'careers' },
-      { name: 'Media', href: '/media' },
-      { name: 'Contact', href: '/contact' },     
+      { name: 'About', description: 'Learn about our mission, vision, and the team behind Dam Seik Services.', href: '/about' },
+      { name: 'Services', description: 'Explore the specialized solutions we provide across industries.', href: '/services' },
+      { name: 'Projects', description: 'Browse through our completed and ongoing projects across various sectors.', href: '/projects' },
+      { name: 'Careers', description: 'Discover open roles and opportunities to grow with Dam Seik Services.', href: 'careers' },
+      { name: 'Media', description: 'Catch up on our latest news, updates, and milestones.', href: '/media' },
+      { name: 'Contact', description: 'Reach out to us for inquiries, partnerships, or collaboration.', href: '/contact' },     
     ].map((link) => (
-      <Link
+      <Box>
+        <Link
         key={link.name}
         href={link.href}
         fontSize="md"
@@ -75,7 +79,10 @@ const NavLinks = ({ onClose }) => (
         onClick={onClose}         
       >
         {link.name}
+        
       </Link>
+      <Box fontWeight={100}>{link.description}</Box>
+      </Box>
     ))}
   </>
 );

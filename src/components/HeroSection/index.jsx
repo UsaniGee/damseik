@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import LearnMoreButton from "../LearnMoreBtn";
 
 
 const slides = [
@@ -74,7 +75,7 @@ const HeroSection = () => {
                 w="100%"
                 zIndex={1}
                 pointerEvents="none"
-              // bg="radial-gradient(circle at right center, rgba(34, 197, 94, 0.35) 0%, rgba(34, 197, 94, 0.7) 30%, transparent 70%)"
+              bg="rgba(000, 000, 000, 0.3)"
 />
 
               <MotionBox
@@ -85,7 +86,6 @@ const HeroSection = () => {
                 top="50%"
                 left={{ base: "auto", md: "10%" }}
                 transform="translateY(-50%)"
-                // bg="rgba(255, 255, 255, 0.7)"
                 p={{md: 10, base: 4}}
                 borderRadius="md"
                 variants={containerVariants}
@@ -94,7 +94,7 @@ const HeroSection = () => {
                 zIndex={2}
               >
                 <MotionBox variants={childVariants} mb={5}>
-                  <Heading fontSize={{ base: "40px", md: "53px" }} color="white" textShadow="2px 2px #000000" w={{md: "500px"}} >
+                  <Heading fontSize={{ base: "40px", md: "4.5em" }} color="white" textShadow="2px 2px #000000" w={{md: ""}} className="font-sora" >
                     {slide.title}
                   </Heading>
                 </MotionBox>
@@ -104,6 +104,7 @@ const HeroSection = () => {
                     {slide.subtitle}
                   </Text>
                 </MotionBox>
+
 {/* 
                 <MotionBox variants={childVariants}>
                   <Link to="/about">

@@ -11,12 +11,12 @@ const ourCoreServices = [
   {
     id: "pipeline-facility-production-maintenace",
     title: "Pipeline Maintenance",
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1752251634/2142_ozfhbr.jpg",
   },
   {
     id: "marine-support-services",
     title: "Marine Engineering & Vessel Manning",
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1752251664/ship-drydock_m7izeg.jpg",
   },
   {
     id: "well-service",
@@ -26,7 +26,7 @@ const ourCoreServices = [
   {
     id: "production-chemical-services",
     title: "Production Chemical Services ",   
-    // image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
+    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1752251636/305_w61sdu.jpg",
     // icon: <PiPipeWrenchFill />
     
   },
@@ -56,13 +56,14 @@ const Services = () => {
             OUR CORE SERVICES
         </Text>
         </Box>
-    <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={10} >
+    <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={10}  >
       {ourCoreServices.map((item, index) => (
         <MotionBox
           key={index}
           position="relative"
           overflow="hidden"
           w="100%"
+          h={"250px"}
           maxW="400px"
           borderRadius="md"
           boxShadow="md"
