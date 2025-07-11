@@ -75,7 +75,7 @@ const HeroSection = () => {
                 w="100%"
                 zIndex={1}
                 pointerEvents="none"
-              bg="rgba(000, 000, 000, 0.3)"
+              bg="rgba(000, 000, 000, 0.5)"
 />
 
               <MotionBox

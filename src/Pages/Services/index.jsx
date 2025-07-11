@@ -88,7 +88,7 @@ const Services = () => {
            w="100%"
            h="100%"
            color="white"
-           bg="rgba(68, 163, 89, 0.4)"
+           bg="rgba(0, 0, 0, 0.4)"
            flexDir="column"
            justifyContent="center"
            alignItems="center"
