@@ -25,7 +25,7 @@ export const projects = [
     {
         image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746453400/WhatsApp_Image_2025-05-05_at_13.29.01_q5urwx.jpg",
         title: "Water Re-Injection Project – Umusadege 1, Kwale, Delta State",
-        subTitle: "Dam Seik Services Ltd successfully executed a high-volume *water re-injection project* for Midwestern Oil & Gas at the *Umusadege 1 wellsite in Kwale, Delta State*. The operation was designed to support reservoir pressure maintenance and enhance oil recovery through sustained water re-injection.",
+        subTitle: "Dam Seik Services Ltd successfully executed a high-volume water re-injection project for Midwestern Oil & Gas at the Umusadege 1 wellsite in Kwale, Delta State. The operation was designed to support reservoir pressure maintenance and enhance oil recovery through sustained water re-injection.",
         id: "projects/water-re-injection-project-umusadege-1-kwale-delta-state"
     },  
 
