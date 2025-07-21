@@ -12,8 +12,8 @@ const Logo = () => {
 
     </Box>
     <Box className='pl-1' >
-      <p className='font-bold text-green-900 leading-2 pt-2 '>DAM SEIK</p>
-      <p className='font-bold text-red-700'>SERVICES</p>
+      <p className='font-bold text-[#5EA52F] leading-2 pt-2 '>DAM SEIK</p>
+      <p className='font-bold text-[#D10205]'>SERVICES</p>
      </Box>
   </Box>
        </Link>
