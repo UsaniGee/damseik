@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React from 'react'
 import ServicesHero from './ServicesHero'
 import { useNavigate } from "react-router-dom";
+import LearnMoreButton from '../../components/LearnMoreBtn/index'
 
 
 const MotionBox = motion(Box);
@@ -34,11 +35,6 @@ const ourCoreServices = [
 ];
 
 
-const LearnMoreButton = ({ title, onClick }) => (
-  <Button colorScheme="green" size="md" onClick={onClick}>
-    {title}
-  </Button>
-);
 
 const Services = () => {
   const navigate = useNavigate();
@@ -50,14 +46,14 @@ const Services = () => {
   return (
     <Box pt={{md: "82px", base: "65px"}} >
          <ServicesHero />
-    <Box p={{md: 24, base: 10}} display={"grid"} justifyContent={"center"}>
+    <Box p={{md: "50px", base: 10}} display={"grid"} justifyContent={"center"}>
     <Box  pb={{md: "50px", base: "20px"}} >
  <Text color={"#989898"}>
             OUR CORE SERVICES
         </Text>
         </Box>
 
-    <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={10}  >
+    <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={"24px"}  >
       {ourCoreServices.map((item, index) => (
         <MotionBox
           key={index}
@@ -97,14 +93,16 @@ const Services = () => {
            alignItems="center"
            textAlign="center"
            transition="opacity 0.3s ease"
-           _groupHover={{ opacity: 0 }}
-
+           _groupHover={{ lg: {opacity: 0} }}
+           gap={{base: 2, lg: 0}}
           >
             <Heading fontSize="xl" mb={2}  >
               {item.title}
             </Heading>
             <Text>{item.description}</Text>
-            {/* <LearnMoreButton title="Explore more" onClick={() => handleNavigate(item.id)}/> */}
+              <Box display={{base: "block", lg: "none"}}>
+              <LearnMoreButton title="Explore More" onClick={() => handleNavigate(item.id)} />
+            </Box>
           </Box>
 
           {/* Overlay on Hover */}
@@ -124,14 +122,15 @@ const Services = () => {
             opacity="0"
             textAlign="center"
             transition="opacity 0.3s ease"
-            _groupHover={{ opacity: 1 }}
+            _groupHover={{ lg: {opacity: 1} }}
             gap={5}
           >
-            <Heading fontSize="xl" mb={2}>
+            <Heading fontSize="xl" mb={{base: 0, lg: 2}}>
               {item.title}
             </Heading>
-    
-            <LearnMoreButton title="Explore more" onClick={() => handleNavigate(item.id)}/>
+            <Box display={{base: "none", lg: "block"}}>
+              <LearnMoreButton title="Explore More" onClick={() => handleNavigate(item.id)} />
+            </Box>
           </Box>
         </MotionBox>
       ))}

@@ -28,12 +28,12 @@ const OurClientsCarousel = () => {
   const [spacing] = useToken("space", ["8"]);
 
   return (
-    <Box overflow="hidden" py={14} mx={{md: 24, base: 5}} bg="white">
-      <Text fontSize="2xl" fontWeight="bold" mb={10} px={6}>
+    <Box  bg="white" py={14}>
+         <Text color={"#D10205"}  mb={10} px={{base: 5, md: "50px", lg: "84px"}} fontSize={{base: "20px", md: "32px"}}>
         Our Clients
       </Text>
 
-      <Box px={6}>
+      <Box px={6} overflow="hidden"  mx={{md: 14, base: 5}}>
         <MotionBox
           display="inline-flex"
           gap={spacing}
@@ -63,7 +63,6 @@ const OurClientsCarousel = () => {
             boxShadow="md"
             flexShrink={0}
             p={3}
-            //  backgroundImage={`url(${client.image})`}
           >
              <Image src={client.image} alt={`Client ${id}`} objectFit="contain" h="100%" />
           </Box>

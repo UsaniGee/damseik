@@ -19,13 +19,16 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
       <Box
         position="absolute"
         top="50%"
-        left="5%"
+        left={{base: 0, md: "5%"}}
         transform="translateY(-50%)"
         color="white"
         display={"grid"}
-        gap={3}
+        w={{base: "100%", md: ""}}
+        textAlign={{base: "center", md: "start"}}
+        placeItems={{base: "center", md: "start"}}
+        // gap={3}
       >
-        <Text fontSize={{ base: "12px", md: "12px" }} fontWeight="bold" >
+        <Text fontSize={{ base: "32px", md: "64px" }} fontWeight="bold" >
           {title}
         </Text>
 
@@ -39,10 +42,10 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
 
 
         {/* Breadcrumb Navigation */}
-        <Breadcrumb   fontSize="sm" color="green.300" mt={2}>
+        <Breadcrumb   fontSize="sm" >
           {breadcrumb.map((item, index) => (
             <BreadcrumbItem key={index} isCurrentPage={index === breadcrumb.length - 1}>
-              <BreadcrumbLink _hover={{ color: "red.600", textDecoration: "underline" }} href={item.link}>{item.label}</BreadcrumbLink>
+              <BreadcrumbLink _hover={{ color: "red.600", textDecoration: "underline" }} fontSize={{md: "20px", base: "16px"}} href={item.link}>{item.label}</BreadcrumbLink>
             </BreadcrumbItem>
           ))}
         </Breadcrumb>

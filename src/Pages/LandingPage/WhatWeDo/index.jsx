@@ -32,12 +32,12 @@ const WhatWeDo = () => {
     ]
     
   return (
-    <Box p={{md: 24, base: 5}}>
+    <Box p={{lg: "84px",md: "50px", base: 5}}>
          <Grid gap={14}>
-         <Text color={"#989898"}>
+         <Text color={"#D10205"} fontSize={{base: "16px", md: "20px"}}>
             OUR CORE SERVICES
         </Text>
-        <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={8} justifyContent={"center"} alignItems={"center"} px={{md: 10 }}  >
+        <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={8} justifyContent={"center"} alignItems={"center"} px={{md: 1 }}  >
             {Services.map((item, index) => (
                 <Link key={index} href={item.id} textDecoration="none"
                 _hover={{ textDecoration: "none" }}>
@@ -46,9 +46,9 @@ const WhatWeDo = () => {
               py={10} px={{base: 3}} borderRadius={"10px"} h={"300px"} transition="transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)"> 
                <Grid justifyContent={"center"} alignItems={"center"}>
                {/* <Image h={"50px"} src={item.image} alt='' /> */}
-               <p className='text-[100px] text-red-600'>{item.icon}</p>
+               <p className='text-[100px] text-[#D10205]'>{item.icon}</p>
                </Grid>
-                <Text textAlign={"center"} fontWeight={600} fontSize={"1.25em"} className='text-green-900' > 
+                <Text textAlign={"center"} fontWeight={600} fontSize={"1.25em"} className='text-[#5EA52F]' > 
                     {item.title}
                 </Text>
               </Grid>

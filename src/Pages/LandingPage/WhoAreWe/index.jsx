@@ -1,20 +1,20 @@
-import { Box, Button, Grid, Image, Link, Text } from '@chakra-ui/react'
+import { Box, Grid, Image, Link, Text } from '@chakra-ui/react'
 import React from 'react'
 import LearnMoreButton from '../../../components/LearnMoreBtn'
 
 const WhoAreWe = () => {
   return (
     <Box bg={"#F5F5F5"}>
-        <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{md: 24, base: 5}} gap={10}>
+        <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{lg: "84px",md: "50px", base: 5}} gap={10}>
            <Grid gap={14}>
-                <Text color={"#989898"}>
+                <Text color={"#D10205"} fontSize={{base: "16px", md: "20px"}}>
                     ABOUT US
                 </Text>
                 <Text fontSize={"23px"}>
                 Dam Seik Services Limited is an indigenous oil and gas servicing company in Nigeria providing innovative and cost effective services that have spanned the better of 36 years. The Company has well structured administrative, sales and technical departments, professionally equipped to attend to clients needs. 
                 </Text>
                <Link href='/about'>
-               <LearnMoreButton title={"LEARN MORE"} />
+               <LearnMoreButton />
                </Link>
            </Grid>
 

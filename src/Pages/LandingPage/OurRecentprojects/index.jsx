@@ -35,11 +35,11 @@ const OurRecentProjects = () => {
 
 
   return (
-    <Box p={{md: 24, base: 5}} bg={"#F5F5F5"} display={"grid"} gap={14}>
-         <Text color={"#000000"} fontSize={"34px"}>
+    <Box p={{lg: "84px",md: "50px", base: 5}} bg={"#F5F5F5"} display={"grid"} gap={14}>
+         <Text color={"#5EA52F"} fontSize={{base: "26px", md: "48px"}} fontWeight={400}>
             Recent Projects
         </Text>
-        <Grid gridTemplateColumns={{md: '1fr 1fr 1fr'}} justifyContent={"center"} gap={10}>
+        <Grid gridTemplateColumns={{md: '1fr 1fr 1fr'}} justifyContent={"center"} gap={5}>
             {projects.slice(0,3)?.map((item, index) => (
                 <Grid key={index} gap={5}>
                <Box h={"300px"}  overflow="hidden">
@@ -67,7 +67,7 @@ const OurRecentProjects = () => {
                 {item.title}
                 </Heading>
                 <Text>
-                {item.subTitle}
+                {item.subTitle.length > 120 ? item.subTitle.slice(0,120) + "...": item.subTitle}
                 </Text>
                <Link href={item.id}>
                <LearnMoreButton  title={"Read more"} />

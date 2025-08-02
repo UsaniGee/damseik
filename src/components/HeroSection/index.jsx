@@ -12,17 +12,17 @@ const slides = [
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_3031_lflfbg.jpg",
     title: "Pipeline/ Pipeline Integrity",
-    subtitle: "Ultrasonic inspection Long Range Ultrasonic Testing (LRUT) is one of the latest technologies in pipeline integrity inspection which is now widely accepted in the oil and gas industry because of its versatility, real time data accuracy and cost effectiveness.",
+    subtitle: "We provide comprehensive pipeline services including installation, maintenance, and integrity management. Using advanced technologies like Long Range Ultrasonic Testing (LRUT), we ensure your pipeline systems operate safely and efficiently.",
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
     title: "Well Services",
-    subtitle: "Dam Seik Services Limited have the ability to supply you with any number of barges on request to enable you maintain a steady flow of operations.",
+    subtitle: "Our well services encompass drilling support, completion operations, workover services, and well maintenance. We deliver reliable solutions to maximize your well productivity and operational efficiency.",
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_2835_rjlteg.jpg",
     title: "Marine Support Services",
-    subtitle: "DAM SEIK SERVICES offers you the most up-to-date and advanced technical solutions for valve repair and production. It is our aim to offer unique products and support services.",
+    subtitle: "We provide comprehensive marine support services for offshore operations, including vessel supply, equipment transport, diving services, and specialized marine logistics to keep your projects running smoothly.",
   },
 ];
 
@@ -84,9 +84,9 @@ const HeroSection = () => {
                 flexDir="column"
                 position="absolute"
                 top="50%"
-                left={{ base: "auto", md: "10%" }}
+                left={{ base: "auto", md: "" }}
                 transform="translateY(-50%)"
-                p={{md: 10, base: 4}}
+                p={{md: "84px", base: 4}}
                 borderRadius="md"
                 variants={containerVariants}
                 initial="hidden"
@@ -94,13 +94,13 @@ const HeroSection = () => {
                 zIndex={2}
               >
                 <MotionBox variants={childVariants} mb={5}>
-                  <Heading fontSize={{ base: "40px", md: "4.5em" }} color="white" textShadow="2px 2px #000000" w={{md: ""}} className="font-sora" >
+                  <Heading fontSize={{ base: "40px", md: "4em" }} color="white" textShadow="2px 2px #000000" w={{md: ""}} className="font-sora" >
                     {slide.title}
                   </Heading>
                 </MotionBox>
 
                 <MotionBox variants={childVariants}>
-                  <Text fontSize={{ base: "16px", md: "16px" }} mt={2} color="white" w={{md: "500px", base: "auto"}} textShadow="1px 1px #000000">
+                  <Text fontSize={{ base: "16px", md: "20px" }} mt={2} color="white" w={{md: "500px", base: "auto"}} textShadow="1px 1px #000000">
                     {slide.subtitle}
                   </Text>
                 </MotionBox>
