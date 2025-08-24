@@ -60,7 +60,7 @@ const handleNavigate = () => {
 
   return (
    <Box
-    // pt={{md: "82px", base: "65px"}}
+    // 
      >
       <AboutHero />
       <Box bg={"#F5F5F5"}>
@@ -223,33 +223,102 @@ const handleNavigate = () => {
             </Box>       
         </Grid>
 
-        {/* Our Clients */}
-        <Grid  px={{md: 24, base: 5}} py={{md: 24, base: 5}} gap={10} bg={""}>
-      <Text color={"#D10205"} fontSize={{base: "20px", md: "32px"}} textAlign={"center"}>
-            OUR CLIENTS
-          </Text>
-          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr 1fr"}} justifyContent={"center"} alignItems={"center"} gap={5}>
-            {clients.map((item, index) => (
-              <Grid key={index}>
-                <Image src={item.image} alt={item.id} />
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
 
-        {/* Our Partners */}
-        <Grid  px={{md: 24, base: 5}} py={{md: 14, base: 5}} gap={10} textAlign={"center"}>
-         <Text color={"#D10205"} fontSize={{base: "20px", md: "32px"}}>
-            OUR PARTNERS
-          </Text>
-          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr 1fr 1fr"}} justifyContent={"center"} alignItems={"center"} gap={5}>
-            {partners.map((item, index) => (
-              <Grid key={index} >
-                <Image src={item.image} alt={item.id} />
-              </Grid>
-            ))}
-          </Grid>
+    <Box bg="#F9FAFB" py={{ base: 10, md: 20 }}>
+      {/* Our Clients */}
+      <Grid gap={8} px={{ base: 5, md: 24 }} textAlign="center">
+        <Text
+          color="#D10205"
+          fontSize={{ base: '24px', md: '36px' }}
+          fontWeight="600"
+        >
+          OUR CLIENTS
+        </Text>
+        <Grid
+          gridTemplateColumns={{
+            base: 'repeat(2, 1fr)',
+            sm: 'repeat(3, 1fr)',
+            md: 'repeat(6, 1fr)',
+          }}
+          gap={{ base: 6, md: 10 }}
+          alignItems="center"
+          justifyContent="center"
+        >
+          {clients.map((item, index) => (
+            <Box
+              key={index}
+              p={4}
+              borderRadius="lg"
+              bg="white"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              boxShadow="sm"
+              _hover={{
+                transform: 'scale(1.05)',
+                boxShadow: 'lg',
+                transition: 'all 0.3s ease-in-out',
+              }}
+            >
+              <Image
+                src={item.image}
+                alt={item.id}
+                maxH="100px"
+                objectFit="contain"
+              />
+            </Box>
+          ))}
         </Grid>
+      </Grid>
+
+      {/* Our Partners */}
+      <Grid gap={8} px={{ base: 5, md: 24 }} mt={{ base: 12, md: 16 }} textAlign="center">
+        <Text
+          color="#D10205"
+          fontSize={{ base: '24px', md: '36px' }}
+          fontWeight="600"
+        >
+          OUR PARTNERS
+        </Text>
+        <Grid
+          gridTemplateColumns={{
+            base: 'repeat(2, 1fr)',
+            sm: 'repeat(3, 1fr)',
+            md: 'repeat(5, 1fr)',
+          }}
+          gap={{ base: 6, md: 10 }}
+          alignItems="center"
+          justifyContent="center"
+        >
+          {partners.map((item, index) => (
+            <Box
+              key={index}
+              p={4}
+              borderRadius="lg"
+              bg="white"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              boxShadow="sm"
+              _hover={{
+                transform: 'scale(1.05)',
+                boxShadow: 'lg',
+                transition: 'all 0.3s ease-in-out',
+              }}
+            >
+              <Image
+                src={item.image}
+                alt={item.id}
+                maxH="100px"
+                objectFit="contain"
+              />
+            </Box>
+          ))}
+        </Grid>
+      </Grid>
+    </Box>
+
+
     </Box>
   )
 }

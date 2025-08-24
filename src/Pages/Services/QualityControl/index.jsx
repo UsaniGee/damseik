@@ -4,7 +4,7 @@ import ServicesHero from '../ServicesHero'
 
 const QualityControl = () => {
   return (
-    <Box pt={{md: "82px", base: "110px"}} >
+    <Box  >
     <ServicesHero />
     <Text>
         Quality control

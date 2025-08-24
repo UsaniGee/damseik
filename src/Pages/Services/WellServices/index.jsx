@@ -4,7 +4,7 @@ import { Box, Grid, Image, ListItem, Text, UnorderedList } from '@chakra-ui/reac
 
 const WellServices = () => {
   return (
-   <Box pt={{md: "82px", base: "65px"}} >
+   <Box  >
        <ServicesHero />
            <Grid px={{md: 4, base: 5}} py={{md: 14, base: 5}} gridTemplateColumns={{lg: "1fr 1fr ", base: "1fr"}} gap={5} >
               <Image />

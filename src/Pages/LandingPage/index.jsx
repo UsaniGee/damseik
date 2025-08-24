@@ -8,7 +8,7 @@ import OurClientsCarousel from '../../components/OurClients'
 
 const LandingPage = () => {
   return (
-   <Box pt={0}>
+   <Box >
     <HeroSection />
     <WhoAreWe />
     <WhatWeDo />

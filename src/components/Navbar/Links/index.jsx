@@ -4,10 +4,8 @@ import {
   Link as ChakraLink,
   Drawer,
   DrawerBody,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
   useDisclosure,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -28,12 +26,14 @@ const Links = ({ color = "white" }) => {
 
   const handleOnClick = (name) => {
     setActive(name);
-    if (onClose) onClose();
+    onClose();
   };
 
   const hoverColor = useColorModeValue("red.600", "red.400");
-  const drawerBg = useColorModeValue("white", "gray.900");
-  const drawerText = useColorModeValue("gray.900", "white");
+  const glassBg = useColorModeValue(
+    "rgba(255, 255, 255, 0.7)",
+    "rgba(26, 32, 44, 0.7)"
+  );
 
   const NavLinks = ({ onItemClick }) => (
     <>
@@ -63,8 +63,8 @@ const Links = ({ color = "white" }) => {
       </Flex>
 
       {/* Mobile */}
-      <Box display={{ base: "block", md: "none" }}>
-        {/* Animated Hamburger Icon */}
+      <Box display={{ base: "block", md: "none" }} position="relative" zIndex="1000">
+        {/* Hamburger/X Toggle */}
         <Box
           as="button"
           onClick={isOpen ? onClose : onOpen}
@@ -75,6 +75,7 @@ const Links = ({ color = "white" }) => {
           alignItems="center"
           justifyContent="center"
           cursor="pointer"
+          zIndex="1100"
         >
           <Box
             as="span"
@@ -108,21 +109,17 @@ const Links = ({ color = "white" }) => {
           />
         </Box>
 
-        {/* Modern Drawer Menu */}
+        {/* Glassy Drawer */}
         <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
           <DrawerOverlay />
           <DrawerContent
-            bg={drawerBg}
-            color={drawerText}
-            p={6}
+            bg={glassBg}
+            backdropFilter="blur(12px)"
+            p={8}
             boxShadow="xl"
-            borderLeft="1px solid"
-            borderColor={useColorModeValue("gray.200", "gray.700")}
+            mt="60px" // Moves it slightly down below the top bar
+            borderLeft="1px solid rgba(255,255,255,0.2)"
           >
-            <DrawerCloseButton top="20px" right="20px" />
-            <DrawerHeader fontSize="xl" fontWeight="bold" borderBottomWidth="1px">
-              Menu
-            </DrawerHeader>
             <DrawerBody>
               <Flex
                 flexDirection="column"
@@ -135,7 +132,7 @@ const Links = ({ color = "white" }) => {
                   <ChakraLink
                     key={link.name}
                     href={link.href}
-                    color={drawerText}
+                    color={useColorModeValue("gray.900", "white")}
                     _hover={{ color: hoverColor }}
                     onClick={() => handleOnClick(link.name)}
                   >

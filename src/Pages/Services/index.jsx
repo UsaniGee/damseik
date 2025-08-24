@@ -1,10 +1,9 @@
-import { Box, Grid, Heading, Image, Text, Button } from "@chakra-ui/react";
+import { Box, Grid, Heading, Image, Text } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import React from 'react'
-import ServicesHero from './ServicesHero'
+import React from 'react';
+import ServicesHero from './ServicesHero';
 import { useNavigate } from "react-router-dom";
-import LearnMoreButton from '../../components/LearnMoreBtn/index'
-
+import LearnMoreButton from '../../components/LearnMoreBtn/index';
 
 const MotionBox = motion(Box);
 
@@ -26,15 +25,10 @@ const ourCoreServices = [
   },
   {
     id: "production-chemical-services",
-    title: "Production Chemical Services ",   
+    title: "Production Chemical Services",   
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1752251636/305_w61sdu.jpg",
-    // icon: <PiPipeWrenchFill />
-    
   },
-  
 ];
-
-
 
 const Services = () => {
   const navigate = useNavigate();
@@ -44,103 +38,113 @@ const Services = () => {
   };
 
   return (
-    <Box >
-         <ServicesHero />
-    <Box p={{md: "50px", base: 10}} display={"grid"} justifyContent={"center"}>
-    <Box  pb={{md: "50px", base: "20px"}} >
- <Text color={"#989898"}>
+    <Box>
+      <ServicesHero />
+      <Box p={{ md: "50px", base: 10 }} display="grid" justifyContent="center">
+        <Box pb={{ md: "50px", base: "20px" }}>
+          <Text color="#989898" textAlign="center" fontSize={{ base: "18px", md: "20px" }} letterSpacing="1px">
             OUR CORE SERVICES
-        </Text>
+          </Text>
         </Box>
 
-    <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap={"24px"}  >
-      {ourCoreServices.map((item, index) => (
-        <MotionBox
-          key={index}
-          position="relative"
-          overflow="hidden"
-          w="100%"
-          h={"250px"}
-          maxW="400px"
-          borderRadius="md"
-          boxShadow="md"
-          role="group"
-        >
-          {/* Image */}
-          <MotionBox
-            as={Image}
-            src={item.image}
-            alt={item.title}
-            w="100%"
-            h="100%"
-            objectFit="cover"
-            transition="all 0.4s ease"
-            _groupHover={{ height: "100%" }}
-          />
+        <Grid templateColumns={{ base: "1fr", md: "1fr 1fr 1fr" }} gap="32px">
+          {ourCoreServices.map((item, index) => (
+            <MotionBox
+              key={index}
+              position="relative"
+              w="100%"
+              h="280px"
+              maxW="400px"
+              borderRadius="2xl"
+              overflow="hidden"
+              cursor="pointer"
+              role="group"
+              whileHover={{ scale: 1.03, y: -5 }}
+              transition="0.3s ease"
+              boxShadow="0 8px 24px rgba(0, 0, 0, 0.1)"
+            >
+              {/* Image with default dim */}
+              <Image
+                src={item.image}
+                alt={item.title}
+                w="100%"
+                h="100%"
+                objectFit="cover"
+                filter="brightness(0.7)"
+                transition="all 0.4s ease"
+                _groupHover={{ filter: "brightness(0.5)" }}
+              />
 
-          <Box 
-           p={4} 
-           display={{ base: "flex", md: "flex" }} 
-           position="absolute"
-           top="0"
-           left="0"
-           w="100%"
-           h="100%"
-           color="white"
-           bg="rgba(0, 0, 0, 0.4)"
-           flexDir="column"
-           justifyContent="center"
-           alignItems="center"
-           textAlign="center"
-           transition="opacity 0.3s ease"
-           _groupHover={{ lg: {opacity: 0} }}
-           gap={{base: 2, lg: 0}}
-          >
-            <Heading fontSize="xl" mb={2}  >
-              {item.title}
-            </Heading>
-            <Text>{item.description}</Text>
-              <Box display={{base: "block", lg: "none"}}>
-              <LearnMoreButton title="Explore More" onClick={() => handleNavigate(item.id)} />
-            </Box>
-          </Box>
+              {/* Always Visible Title Layer */}
+              <Box
+                position="absolute"
+                top="0"
+                left="0"
+                w="100%"
+                h="100%"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                pointerEvents="none"
+              >
+                <Heading
+                  fontSize="xl"
+                  color="white"
+                  fontWeight="600"
+                  textAlign="center"
+                  px={3}
+                  pointerEvents="none"
+                >
+                  {item.title}
+                </Heading>
+              </Box>
 
-          {/* Overlay on Hover */}
-          <Box
-            position="absolute"
-            top="0"
-            left="0"
-            w="100%"
-            h="100%"
-            p={5}
-            color="white"
-            bg="rgba(0, 0, 0, 0.4)"
-            display={{base: "flex", md: "flex"}}
-            flexDir="column"
-            justifyContent="center"
-            alignItems="center"
-            opacity="0"
-            textAlign="center"
-            transition="opacity 0.3s ease"
-            _groupHover={{ lg: {opacity: 1} }}
-            gap={5}
-          >
-            <Heading fontSize="xl" mb={{base: 0, lg: 2}}>
-              {item.title}
-            </Heading>
-            <Box display={{base: "none", lg: "block"}}>
-              <LearnMoreButton title="Explore More" onClick={() => handleNavigate(item.id)} />
-            </Box>
-          </Box>
-        </MotionBox>
-      ))}
-    </Grid>
+              {/* Mobile: Show button always */}
+              <Box
+                position="absolute"
+                bottom="10px"
+                left="50%"
+                transform="translateX(-50%)"
+                display={{ base: "block", lg: "none" }}
+              >
+                <LearnMoreButton title="Explore More" onClick={() => handleNavigate(item.id)} />
+              </Box>
 
-
-         </Box>
+              {/* Desktop: Glassy Hover Overlay */}
+              <Box
+                position="absolute"
+                top="0"
+                left="0"
+                w="100%"
+                h="100%"
+                p={6}
+                display={{ base: "none", lg: "flex" }}
+                flexDir="column"
+                justifyContent="center"
+                alignItems="center"
+                textAlign="center"
+                color="white"
+                bg="rgba(255, 255, 255, 0.1)"
+                backdropFilter="blur(12px)"
+                border="1px solid rgba(255, 255, 255, 0.2)"
+                borderRadius="2xl"
+                opacity="0"
+                transition="opacity 0.3s ease"
+                _groupHover={{ opacity: 1 }}
+              >
+                <Heading fontSize="xl" mb={2} fontWeight="600">
+                  {item.title}
+                </Heading>
+                <Box mt={4}>
+                  <LearnMoreButton title="Explore More" onClick={() => handleNavigate(item.id)} />
+                </Box>
+              </Box>
+            </MotionBox>
+          ))}
+        </Grid>
+      </Box>
     </Box>
-      
-  )
-}
+  );
+};
 
-export default Services
+export default Services;

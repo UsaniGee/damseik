@@ -4,7 +4,7 @@ import { Box, Text } from '@chakra-ui/react'
 
 const ProcessInstrumentation = () => {
   return (
-    <Box pt={{md: "82px", base: "110px"}} >
+    <Box  >
     <ServicesHero />
     <Text>
         Process Instrumentation

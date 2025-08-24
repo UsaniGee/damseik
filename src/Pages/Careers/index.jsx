@@ -4,7 +4,7 @@ import CareersHero from './CareersHero'
 
 const Careers = () => {
   return (
-  <Box pt={{md: "82px", base: "65px"}} >
+  <Box  >
     <CareersHero />
     <Box px={{md: 14, base: 5}}>
         Hello

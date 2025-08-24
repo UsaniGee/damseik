@@ -4,7 +4,7 @@ import ServicesHero from '../ServicesHero'
 
 const Procurement = () => {
   return (
-    <Box pt={{md: "82px", base: "110px"}} >
+    <Box  >
     <ServicesHero />
     <Text>
         Equipment Leasing

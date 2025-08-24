@@ -104,8 +104,8 @@ const HeroSection = () => {
                 maxW={{ base: "100%", md: "600px" }}
                 color="white"
                 borderRadius="xl"
-                bg="rgba(255, 255, 255, 0.05)"
-                backdropFilter="blur(10px)"
+                bg={{ base: "transparent", md: "rgba(255, 255, 255, 0.05)" }}
+                backdropFilter={{ base: "none", md: "blur(10px)" }}
                 variants={containerVariants}
                 initial="hidden"
                 animate={activeIndex === index ? "visible" : "hidden"}

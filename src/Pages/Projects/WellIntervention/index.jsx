@@ -6,7 +6,7 @@ import ProjectsHero from '../ProjectsHero'
 const WellInterventionProject = () => {
 
   return (
-    <Box pt={{md: "82px", base: "110px"}} pb={14}>
+    <Box  pb={14}>
     <ProjectsHero />      
     <Grid px={{md: 4, base: 5}} py={{md: 14, base: 14}} gridTemplateColumns={{lg: "1fr 1fr ", base: "1fr"}} gap={14} justifyContent={"center"} alignItems={"center"}>
     <Box >
