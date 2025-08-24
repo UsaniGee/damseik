@@ -1,71 +1,99 @@
-import { Box, Image, Text, useToken } from "@chakra-ui/react";
+import { Box, Image, Text, useToken, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
+const MotionImage = motion(Image);
 
-const clientNames = [
-  {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg",
-  },
-  {
-        image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Total_ak3xt5.jpg",
-  },
-  {
-       image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/NNPC_hxrs9q.jpg",
-  },
-  {
-        image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Agip_qjkvha.jpg",
-  },
-  {
-      image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Mobil_zbfvom.jpg",
-  },
-  {
-       image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745940408/Juesco_b1ds4z.jpg",
-  },
+const clientLogos = [
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Total_ak3xt5.jpg" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/NNPC_hxrs9q.jpg" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Agip_qjkvha.jpg" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Mobil_zbfvom.jpg" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745940408/Juesco_b1ds4z.jpg" },
 ];
 
 const OurClientsCarousel = () => {
-  const [spacing] = useToken("space", ["8"]);
+  const [spacing] = useToken("space", ["12"]);
+  const bgColor = useColorModeValue("white", "gray.900");
+  const fadeColor = useColorModeValue("white", "gray.900");
 
   return (
-    <Box  bg="white" py={14}>
-         <Text color={"#D10205"}  mb={10} px={{base: 5, md: "50px", lg: "84px"}} fontSize={{base: "20px", md: "32px"}}>
-        Our Clients
+    <Box bg={bgColor} py={16} position="relative" overflow="hidden">
+      <Text
+        color="#D10205"
+        mb={12}
+        px={{ base: 5, md: 10 }}
+        fontSize={{ base: "22px", md: "36px" }}
+        fontWeight="bold"
+        textAlign="center"
+      >
+        Trusted by Industry Leaders
       </Text>
 
-      <Box px={6} overflow="hidden"  mx={{md: 14, base: 5}}>
+      {/* Fading edges for a premium look */}
+      <Box
+        position="absolute"
+        left="0"
+        top="0"
+        bottom="0"
+        w="100px"
+        bg={`linear-gradient(to right, ${fadeColor} 50%, transparent 100%)`}
+        zIndex={2}
+      />
+      <Box
+        position="absolute"
+        right="0"
+        top="0"
+        bottom="0"
+        w="100px"
+        bg={`linear-gradient(to left, ${fadeColor} 50%, transparent 100%)`}
+        zIndex={2}
+      />
+
+      {/* Carousel */}
+      <Box px={{ base: 4, md: 10 }} overflow="hidden">
         <MotionBox
           display="inline-flex"
           gap={spacing}
           animate={{
-            x: ["0%", "-100%"],
+            x: ["0%", "-50%"],
           }}
           transition={{
             repeat: Infinity,
-            repeatType: "loop",
+            duration: 40,
             ease: "linear",
-            duration: 100,
-            repeatDelay: 0.1, 
           }}
         >
-          {[...clientNames, ...clientNames].map((client, id) => (
-            <Box
-            key={id}
-            // minW="200px"
-            h="100px"
-            bg="white"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            fontWeight="bold"
-            fontSize="xl"
-            borderRadius="md"
-            boxShadow="md"
-            flexShrink={0}
-            p={3}
-          >
-             <Image src={client.image} alt={`Client ${id}`} objectFit="contain" h="100%" />
-          </Box>
+          {[...clientLogos, ...clientLogos].map((client, idx) => (
+            <MotionBox
+              key={idx}
+              flexShrink={0}
+              bg="white"
+              borderRadius="xl"
+              boxShadow="lg"
+              p={4}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              w={{ base: "120px", md: "160px" }}
+              h={{ base: "80px", md: "100px" }}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            >
+              <MotionImage
+                src={client.image}
+                alt={`Client ${idx}`}
+                objectFit="contain"
+                maxH="100%"
+                maxW="100%"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              />
+            </MotionBox>
           ))}
         </MotionBox>
       </Box>

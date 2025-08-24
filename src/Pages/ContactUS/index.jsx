@@ -5,7 +5,9 @@ import ContactForm from './ContactForm'
 
 const Contact = () => {
   return (
-   <Box pt={{md: "82px", base: "65px"}} >
+   <Box 
+  //  pt={{md: "82px", base: "65px"}}
+    >
       <ContactHero />
       <Box p={{md: 24, base: 5}}>
          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={20}>

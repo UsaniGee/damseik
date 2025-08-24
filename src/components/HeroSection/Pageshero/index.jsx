@@ -3,7 +3,7 @@ import { Box, Text, Breadcrumb, BreadcrumbItem, BreadcrumbLink, Image } from "@c
 
 const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
   return (
-    <Box position="relative" w="100%" h={{ base: "300px", md: "500px" }}>
+    <Box position="relative" w="100%" h={{ base: "500px", md: "500px" }}>
       {/* Background Image */}
       <Image
         src={imageSrc}

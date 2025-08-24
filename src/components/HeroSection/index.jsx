@@ -1,28 +1,31 @@
+"use client";
+
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { chakra, Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, chakra } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import LearnMoreButton from "../LearnMoreBtn";
-
 
 const slides = [
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_3031_lflfbg.jpg",
-    title: "Pipeline/ Pipeline Integrity",
-    subtitle: "We provide comprehensive pipeline services including installation, maintenance, and integrity management. Using advanced technologies like Long Range Ultrasonic Testing (LRUT), we ensure your pipeline systems operate safely and efficiently.",
+    video: "https://res.cloudinary.com/dnu4lxiie/video/upload/v1756036215/aPipe_azt6w2.mp4", 
+    title: "Pipeline Integrity",
+    subtitle:
+      "We provide comprehensive pipeline services including installation, maintenance, and integrity management with cutting-edge technology.",
   },
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744149111/5017_jgsf0e.jpg",
+    video: "https://res.cloudinary.com/dnu4lxiie/video/upload/v1756034085/11996993_3840_2160_30fps_jq0opa.mp4",
     title: "Well Services",
-    subtitle: "Our well services encompass drilling support, completion operations, workover services, and well maintenance. We deliver reliable solutions to maximize your well productivity and operational efficiency.",
+    subtitle:
+      "From drilling to well maintenance, we deliver reliable solutions to maximize productivity and ensure operational efficiency.",
   },
   {
-    image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746091329/IMG_2835_rjlteg.jpg",
+    video: "https://res.cloudinary.com/dnu4lxiie/video/upload/v1756036202/aMarine_etslw2.mp4",
     title: "Marine Support Services",
-    subtitle: "We provide comprehensive marine support services for offshore operations, including vessel supply, equipment transport, diving services, and specialized marine logistics to keep your projects running smoothly.",
+    subtitle:
+      "Providing seamless offshore logistics, vessel supply, and diving services to keep your projects running smoothly.",
   },
 ];
 
@@ -33,14 +36,12 @@ const HeroSection = () => {
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: {
-        staggerChildren: 0.4, 
-      },
+      transition: { staggerChildren: 0.3 },
     },
   };
 
   const childVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
@@ -49,75 +50,87 @@ const HeroSection = () => {
   };
 
   return (
-    <Box position="relative" w="100%" h={{ base: "60vh", md: "100vh" }}>
+    <Box position="relative" w="100%" h={{ base: "70vh", md: "100vh" }} overflow="hidden">
       <Swiper
         modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 6000 }}
         loop
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         style={{ width: "100%", height: "100%" }}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <Box
-              backgroundImage={`url(${slide.image})`}
-              backgroundSize="cover"
-              backgroundPosition="center"
-              w="100%"
-              h="100%"
-              position="relative"
-            >
+            <Box w="100%" h="100%" position="relative" overflow="hidden">
+              {/* Video Background */}
+              <Box
+                as="video"
+                src={slide.video}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                objectFit="cover"
+                w="100%"
+                h="100%"
+                sx={{
+                  "@media (max-width: 768px)": {
+                    objectPosition: "center top", // Keep focus on top for mobile
+                  },
+                  "@media (min-width: 769px)": {
+                    objectPosition: "center", // Normal desktop centering
+                  },
+                }}
+              />
+
+              {/* Glassmorphism Overlay */}
               <Box
                 position="absolute"
-                top={0}
-                right={0}
-                h="100%"
-                w="100%"
+                inset={0}
+                bg="rgba(0, 0, 0, 0.4)"
                 zIndex={1}
-                pointerEvents="none"
-              bg="rgba(000, 000, 000, 0.5)"
-/>
+              />
 
+              {/* Text Content */}
               <MotionBox
-                key={activeIndex === index ? `slide-${index}` : undefined}
+                key={index}
                 display="flex"
                 flexDir="column"
+                alignItems="flex-start"
+                justifyContent="center"
                 position="absolute"
-                top="50%"
-                left={{ base: "auto", md: "" }}
-                transform="translateY(-50%)"
-                p={{md: "84px", base: 4}}
-                borderRadius="md"
+                inset="0"
+                p={{ base: 6, md: 16 }}
+                maxW={{ base: "100%", md: "600px" }}
+                color="white"
+                borderRadius="xl"
+                bg="rgba(255, 255, 255, 0.05)"
+                backdropFilter="blur(10px)"
                 variants={containerVariants}
                 initial="hidden"
                 animate={activeIndex === index ? "visible" : "hidden"}
                 zIndex={2}
               >
-                <MotionBox variants={childVariants} mb={5}>
-                  <Heading fontSize={{ base: "40px", md: "4em" }} color="white" textShadow="2px 2px #000000" w={{md: ""}} className="font-sora" >
+                <MotionBox variants={childVariants} mb={4}>
+                  <Heading
+                    fontSize={{ base: "2rem", md: "4rem" }}
+                    fontWeight="bold"
+                    lineHeight="1.2"
+                    className="font-sora"
+                  >
                     {slide.title}
                   </Heading>
                 </MotionBox>
 
                 <MotionBox variants={childVariants}>
-                  <Text fontSize={{ base: "16px", md: "20px" }} mt={2} color="white" w={{md: "500px", base: "auto"}} textShadow="1px 1px #000000">
+                  <Text
+                    fontSize={{ base: "1rem", md: "1.25rem" }}
+                    lineHeight="1.6"
+                    maxW="480px"
+                  >
                     {slide.subtitle}
                   </Text>
                 </MotionBox>
-
-{/* 
-                <MotionBox variants={childVariants}>
-                  <Link to="/about">
-                    <Button
-                      mt={4}
-                      colorScheme="blue"
-                      size="lg"
-                      _hover={{ bg: "blue.700" }}
-                    >
-                      {slide.buttonText}
-                    </Button>
-                  </Link>
-                </MotionBox> */}
               </MotionBox>
             </Box>
           </SwiperSlide>

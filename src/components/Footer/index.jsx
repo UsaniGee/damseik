@@ -1,102 +1,154 @@
-import { Box, Flex, Grid, Link, Text } from '@chakra-ui/react'
-import React from 'react'
-import Logo from '../Navbar/Logo';
+import {
+  Box,
+  Flex,
+  Grid,
+  Link,
+  Text,
+  VStack,
+  HStack,
+  useColorModeValue,
+  Collapse,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import {
+  FaFacebookF,
+  FaXTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+} from "react-icons/fa6"; // Modern icons
+import React from "react";
+import Logo from "../Navbar/Logo";
 
+const MotionBox = motion(Box);
+
+const NAV_LINKS = [
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" },
+  { name: "Careers", href: "/careers" },
+  { name: "Media", href: "/media" },
+  { name: "Contact", href: "/contact" },
+];
+
+const SOCIALS = [
+  { name: "Facebook", href: "#", icon: FaFacebookF },
+  { name: "X", href: "#", icon: FaXTwitter },
+  { name: "LinkedIn", href: "#", icon: FaLinkedinIn },
+  { name: "Instagram", href: "#", icon: FaInstagram },
+];
 
 const Footer = () => {
   return (
-   <Box p={{md: 14, base: 5}} bg={"red.50"}  display={"flex"} flexDirection={{base: "column", md: "row"}} justifyContent={"space-between"}>
-
-    <Grid placeItems={{base: "start"}} >
-      <Logo />
-      <div className='text-[#D10205]'>Copyright &copy; 2025</div> 
-    </Grid>
-    
-       
-    <Box paddingTop={5}>
-      <Grid fontWeight={600} gridTemplateColumns={{md: "1fr 1fr 1fr"}} color={"white"} w={{ md: "100%"}} gap={5} mb={10}>
-        <NavLinks />
-      </Grid>
-      {/* Bottom Section */}    
-        <Flex gap={1} mt={4} justifyContent={"space-between"}>
-          <Text color={"#D10205"}>Follow Us on </Text>
-          {/* Facebook */}
-          <Link href="#" color="#D10205" _hover={{ color: "blue.500" }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </Link>
-    
-          {/* X (Twitter) */}
-          <Link href="#" color="#D10205" _hover={{ color: "gray.300" }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.41 3H17.3l-4.22 5.56L8.57 3H3l6.95 9.07L3.33 21h3.11l4.75-6.26L15.43 21H21l-7.38-9.63L20.41 3z" />
-            </svg>
-          </Link>
-    
-          {/* LinkedIn */}
-          <Link href="#" color="#D10205" _hover={{ color: "blue.800" }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-              <rect x="2" y="9" width="4" height="12"></rect>
-              <circle cx="4" cy="4" r="2"></circle>
-            </svg>
-          </Link>
-    
-          {/* Instagram */}
-          <Link href="#" color="#D10205" _hover={{ color: "red.400" }}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </Link>
-        </Flex>
-    </Box>
-      
-   </Box>
-  )
-}
-
-
-const NavLinks = ({ onClose }) => (
-  <>
-    {[
-      { name: 'About',
-        //  description: 'Learn about our mission, vision, and the team behind Dam Seik Services.', 
-         href: '/about' },
-      { name: 'Services', 
-        // description: 'Explore the specialized solutions we provide across industries.', 
-        href: '/services' },
-      { name: 'Projects', 
-        // description: 'Browse through our completed and ongoing projects across various sectors.',
-         href: '/projects' },
-      { name: 'Careers',
-        //  description: 'Discover open roles and opportunities to grow with Dam Seik Services.', 
-        href: 'careers' },
-      { name: 'Media', 
-        // description: 'Catch up on our latest news, updates, and milestones.', 
-        href: '/media' },
-      { name: 'Contact', 
-        // description: 'Reach out to us for inquiries, partnerships, or collaboration.', 
-        href: '/contact' },     
-    ].map((link) => (
-      <Box>
-        <Link
-        key={link.name}
-        href={link.href}
-        fontSize="md"
-        fontWeight={600}
-        color="#D10205"
-        _hover={{ color: 'green.600' }}
-        onClick={onClose}         
+    <Box
+      bg="linear-gradient(135deg, rgba(90,2,5,0.85), rgba(140,0,0,0.75))"
+      backdropFilter="blur(12px)"
+      color="white"
+      pt={16}
+      pb={10}
+    >
+      <Grid
+        px={{ base: 5, md: 14 }}
+        templateColumns={{ base: "1fr", md: "2fr 1fr 1fr" }}
+        gap={10}
+        alignItems="start"
       >
-        {link.name}
-        
-      </Link>
-      <Box fontWeight={100}>{link.description}</Box>
-      </Box>
-    ))}
-  </>
-);
-export default Footer
+        {/* Left Section */}
+        <VStack align="start" spacing={4}>
+          <Logo />
+          <Text fontSize="sm" color="whiteAlpha.700">
+            © {new Date().getFullYear()} Dam Seik Services. All rights reserved.
+          </Text>
+          <HStack spacing={4} pt={2}>
+            {SOCIALS.map((s, i) => (
+              <MotionBox
+                key={i}
+                whileHover={{ scale: 1.2, y: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  href={s.href}
+                  aria-label={s.name}
+                  color="whiteAlpha.900"
+                  _hover={{ color: "green.300" }}
+                  fontSize="xl"
+                >
+                  <s.icon />
+                </Link>
+              </MotionBox>
+            ))}
+          </HStack>
+        </VStack>
+
+        {/* Middle Section */}
+        <FooterSection title="Navigation" links={NAV_LINKS} />
+
+        {/* Right Section */}
+        <VStack align="start" spacing={3}>
+          <Text fontSize="lg" fontWeight="bold" color="white">
+            Get in Touch
+          </Text>
+          <Text fontSize="sm" color="whiteAlpha.800">
+            Head office: #10 Second Avenue, Federal Housing Estate Rumuemue,
+            Mile 4, Warehouse Plot 224 Iyowuna Drive, Trans Amadi Industrial
+            Layout, PH.
+          </Text>
+          <Link
+            href="mailto:info@damseik.com"
+            fontSize="sm"
+            color="green.300"
+            _hover={{ textDecoration: "underline" }}
+          >
+            info@damseik.com
+          </Link>
+        </VStack>
+      </Grid>
+
+      {/* Bottom Bar */}
+      <Flex justify="center" mt={10} fontSize="sm" color="whiteAlpha.600">
+        Built by Suarani Technologies (FitTechy)
+      </Flex>
+    </Box>
+  );
+};
+
+const FooterSection = ({ title, links }) => {
+  const { isOpen, onToggle } = useDisclosure();
+
+  return (
+    <Box>
+      <Flex
+        justify="space-between"
+        align="center"
+        onClick={onToggle}
+        cursor={{ base: "pointer", md: "default" }}
+        mb={4}
+      >
+        <Text fontSize="lg" fontWeight="bold" color="white">
+          {title}
+        </Text>
+        <Box display={{ base: "block", md: "none" }}>
+          <ChevronDownIcon />
+        </Box>
+      </Flex>
+      <Collapse in={isOpen || true} animateOpacity>
+        <VStack align="start" spacing={3}>
+          {links.map((link, idx) => (
+            <Link
+              key={idx}
+              href={link.href}
+              fontSize="sm"
+              color="whiteAlpha.800"
+              _hover={{ color: "green.300", textDecoration: "underline" }}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </VStack>
+      </Collapse>
+    </Box>
+  );
+};
+
+export default Footer;
