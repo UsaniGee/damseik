@@ -2,12 +2,16 @@ import { Box, Grid, Text } from '@chakra-ui/react'
 import React from 'react'
 import ContactHero from './ContactHero'
 import ContactForm from './ContactForm'
+import SEO from '../../components/SEO'
 
 const Contact = () => {
   return (
-   <Box 
-  //  
-    >
+   <Box>
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with Dam Seik Services. Contact our team for inquiries about oil & gas services, pipeline maintenance, well services, and marine support."
+        keywords="contact dam seik, inquiry, oil and gas services contact, pipeline services contact"
+      />
       <ContactHero />
       <Box p={{md: 24, base: 5}}>
          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={20}>
@@ -16,12 +20,12 @@ const Contact = () => {
               Port Harcourt
             </Text>
             <Text>
-            Head office located at #10 Second Avenue Federal Housing Estate Rumuemue, mile 4 ,Warehouse Plot 224 lyowuna Drive Trans Amadi Industrial Layout, PH.
+            5 Eusco Estate, Destiny Drive, Okuru-Ama, Off Peter Odili Road, Port harcourt, Rivers State
             </Text>
             <Text as="a" href="tel:+2348033433350">
             (+234) (0) 803 343 3350
             </Text>
-            <Text as="a" color="red.600" href="mailto:inquiries@damseikservices.com">
+            <Text as="a" color="#D10205" href="mailto:inquiries@damseikservices.com">
               inquiries@damseikservices.com
             </Text>
           </Box>
@@ -35,7 +39,7 @@ const Contact = () => {
             <Text as="a" href="tel:+2348033433350">
             (+234) (0)  803 343 3350
             </Text>
-            <Text as="a" color="red.600" href="mailto:inquiries@damseikservices.com">
+            <Text as="a" color="#D10205" href="mailto:inquiries@damseikservices.com">
               inquiries@damseikservices.com
             </Text>
           </Box>

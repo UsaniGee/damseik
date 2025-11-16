@@ -6,30 +6,45 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Image,
+  Button,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
+const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb, ctaText, ctaLink }) => {
   return (
     <Box position="relative" w="100%" h={{ base: "420px", md: "520px" }} overflow="hidden">
-      {/* Background Image */}
+  
       <Image
         src={imageSrc}
-        alt={title}
+        alt={`${title} - Dam Seik Services`}
         objectFit="cover"
         objectPosition="center"
         w="100%"
         h="100%"
-        filter="brightness(60%)"
+        loading="eager"
+        sx={{
+          filter: "brightness(0.7) contrast(1.1) saturate(0.9)",
+          transition: "filter 0.3s ease",
+        }}
       />
 
-      {/* Subtle Gradient Overlay */}
       <Box
         position="absolute"
         top="0"
         left="0"
         w="100%"
         h="100%"
-        bgGradient="linear(to-b, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.7) 100%)"
+        bgGradient="linear(to-b, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%)"
+        zIndex="1"
+      />
+      
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        w="100%"
+        h="100%"
+        bg="rgba(0, 0, 0, 0.3)"
         zIndex="1"
       />
 
@@ -97,7 +112,7 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
                 <BreadcrumbLink
                   href={item.link}
                   _hover={{
-                    color: "red.400",
+                    color: "#D10205",
                     textDecoration: "underline",
                   }}
                   fontWeight={index === breadcrumb.length - 1 ? "bold" : "medium"}
@@ -107,6 +122,32 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb }) => {
               </BreadcrumbItem>
             ))}
           </Breadcrumb>
+        )}
+
+        {(ctaText && ctaLink) && (
+          <Box mt={6}>
+            <Button
+              as={Link}
+              to={ctaLink}
+              size={{ base: "md", md: "lg" }}
+              bg="#D10205"
+              color="white"
+              fontSize={{ base: "0.875rem", md: "1rem" }}
+              fontWeight="semibold"
+              px={{ base: 6, md: 8 }}
+              py={{ base: 5, md: 6 }}
+              borderRadius="full"
+              _hover={{
+                bg: "#B00204",
+                transform: "translateY(-2px)",
+                boxShadow: "0 10px 25px rgba(209, 2, 5, 0.4)",
+              }}
+              transition="all 0.3s ease"
+              boxShadow="0 4px 15px rgba(209, 2, 5, 0.3)"
+            >
+              {ctaText}
+            </Button>
+          </Box>
         )}
       </Box>
     </Box>

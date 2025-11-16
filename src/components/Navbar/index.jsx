@@ -34,7 +34,7 @@ const Navbar = () => {
       top="0"
       left="0"
       w="100%"
-      zIndex={50}
+      zIndex={1000}
       transition="all 0.3s ease"
       bg={bg}
       backdropFilter={scrolled ? "blur(10px)" : "none"}

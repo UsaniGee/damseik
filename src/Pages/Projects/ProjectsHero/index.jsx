@@ -51,6 +51,8 @@ const projectsHero = {
         { label: "Home", link: "/" },
         { label: "Projects", link: "/projects" }
       ]}
+      ctaText="Contact Us"
+      ctaLink="/contact"
     />
   );
 };

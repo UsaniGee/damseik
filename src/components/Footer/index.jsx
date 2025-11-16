@@ -2,7 +2,7 @@ import {
   Box,
   Flex,
   Grid,
-  Link,
+  Link as ChakraLink,
   Text,
   VStack,
   HStack,
@@ -10,6 +10,7 @@ import {
   Collapse,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
@@ -67,15 +68,16 @@ const Footer = () => {
                 whileHover={{ scale: 1.2, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link
+                <ChakraLink
                   href={s.href}
                   aria-label={s.name}
                   color="whiteAlpha.900"
-                  _hover={{ color: "green.300" }}
+                  _hover={{ color: "#5EA52F" }}
                   fontSize="xl"
+                  isExternal
                 >
                   <s.icon />
-                </Link>
+                </ChakraLink>
               </MotionBox>
             ))}
           </HStack>
@@ -94,14 +96,14 @@ const Footer = () => {
             Mile 4, Warehouse Plot 224 Iyowuna Drive, Trans Amadi Industrial
             Layout, PH.
           </Text>
-          <Link
+          <ChakraLink
             href="mailto:info@damseik.com"
             fontSize="sm"
-            color="green.300"
+            color="#5EA52F"
             _hover={{ textDecoration: "underline" }}
           >
             info@damseik.com
-          </Link>
+          </ChakraLink>
         </VStack>
       </Grid>
 
@@ -135,15 +137,16 @@ const FooterSection = ({ title, links }) => {
       <Collapse in={isOpen || true} animateOpacity>
         <VStack align="start" spacing={3}>
           {links.map((link, idx) => (
-            <Link
+            <ChakraLink
               key={idx}
-              href={link.href}
+              as={Link}
+              to={link.href}
               fontSize="sm"
               color="whiteAlpha.800"
-              _hover={{ color: "green.300", textDecoration: "underline" }}
+              _hover={{ color: "#5EA52F", textDecoration: "underline" }}
             >
               {link.name}
-            </Link>
+            </ChakraLink>
           ))}
         </VStack>
       </Collapse>

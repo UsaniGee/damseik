@@ -5,12 +5,12 @@ const MotionBox = motion(Box);
 const MotionImage = motion(Image);
 
 const clientLogos = [
-  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg" },
-  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Total_ak3xt5.jpg" },
-  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/NNPC_hxrs9q.jpg" },
-  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Agip_qjkvha.jpg" },
-  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Mobil_zbfvom.jpg" },
-  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745940408/Juesco_b1ds4z.jpg" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg", name: "Shell" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Total_ak3xt5.jpg", name: "Total" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/NNPC_hxrs9q.jpg", name: "NNPC" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Agip_qjkvha.jpg", name: "Agip" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939086/Mobil_zbfvom.jpg", name: "Mobil" },
+  { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745940408/Juesco_b1ds4z.jpg", name: "Juesco" },
 ];
 
 const OurClientsCarousel = () => {
@@ -86,12 +86,13 @@ const OurClientsCarousel = () => {
             >
               <MotionImage
                 src={client.image}
-                alt={`Client ${idx}`}
+                alt={`${client.name} - Client of Dam Seik Services`}
                 objectFit="contain"
                 maxH="100%"
                 maxW="100%"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
+                loading="lazy"
               />
             </MotionBox>
           ))}

@@ -12,6 +12,8 @@ const AboutHero = () => {
         { label: "Home", link: "/" },
         { label: "About Us", link: "/about" }
       ]}
+      ctaText="Contact Us"
+      ctaLink="/contact"
     />
   );
 };

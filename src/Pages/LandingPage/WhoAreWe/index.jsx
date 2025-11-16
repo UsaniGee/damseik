@@ -2,11 +2,12 @@ import {
   Box,
   Grid,
   Image,
-  Link,
+  Link as ChakraLink,
   Text,
   VStack,
   Heading,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import React from "react";
 import LearnMoreButton from "../../../components/LearnMoreBtn";
 
@@ -56,20 +57,21 @@ const WhoAreWe = () => {
             and professionalism.
           </Text>
 
-          <Link href="/about">
+          <ChakraLink as={Link} to="/about" _hover={{ textDecoration: "none" }}>
             <LearnMoreButton />
-          </Link>
+          </ChakraLink>
         </VStack>
 
         {/* Image with Overlay */}
         <Box position="relative" w="full" h="full" borderRadius="2xl" overflow="hidden">
           <Image
             src="https://res.cloudinary.com/dnu4lxiie/image/upload/v1744171724/30642_asod8j.jpg"
-            alt="About Dam Seik Services"
+            alt="About Dam Seik Services - Oil and gas engineering team"
             objectFit="cover"
             w="full"
             h={{ base: "250px", md: "100%" }}
             borderRadius="2xl"
+            loading="lazy"
           />
 
           {/* Floating Card */}

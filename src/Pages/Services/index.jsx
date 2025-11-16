@@ -4,6 +4,7 @@ import React from 'react';
 import ServicesHero from './ServicesHero';
 import { useNavigate } from "react-router-dom";
 import LearnMoreButton from '../../components/LearnMoreBtn/index';
+import SEO from '../../components/SEO';
 
 const MotionBox = motion(Box);
 
@@ -39,6 +40,11 @@ const Services = () => {
 
   return (
     <Box>
+      <SEO 
+        title="Our Services"
+        description="Comprehensive oil & gas services including pipeline maintenance, well services, marine engineering, production chemical services, and more. Quality solutions for the energy industry."
+        keywords="oil and gas services, pipeline maintenance, well services, marine engineering, production chemicals, equipment leasing, valve services"
+      />
       <ServicesHero />
       <Box p={{ md: "50px", base: 10 }} display="grid" justifyContent="center">
         <Box pb={{ md: "50px", base: "20px" }}>
@@ -66,13 +72,14 @@ const Services = () => {
               {/* Image with default dim */}
               <Image
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} service by Dam Seik Services`}
                 w="100%"
                 h="100%"
                 objectFit="cover"
                 filter="brightness(0.7)"
                 transition="all 0.4s ease"
                 _groupHover={{ filter: "brightness(0.5)" }}
+                loading="lazy"
               />
 
               {/* Always Visible Title Layer */}

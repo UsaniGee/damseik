@@ -6,6 +6,7 @@ import LearnMoreButton from '../../components/LearnMoreBtn'
 import { center } from '@cloudinary/url-gen/qualifiers/textAlignment'
 import { full } from '@cloudinary/url-gen/qualifiers/fontHinting'
 import { useNavigate } from 'react-router-dom'
+import SEO from '../../components/SEO'
 
 const AboutUs = () => {
 const clients = [
@@ -59,9 +60,12 @@ const handleNavigate = () => {
 }
 
   return (
-   <Box
-    // 
-     >
+   <Box>
+      <SEO 
+        title="About Us"
+        description="Learn about Dam Seik Services Limited - Over 36 years of excellence in oil & gas services. Our mission, vision, and commitment to quality engineering solutions in Nigeria."
+        keywords="about dam seik, oil and gas company nigeria, pipeline services company, well services provider, marine engineering services"
+      />
       <AboutHero />
       <Box bg={"#F5F5F5"}>
         <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{lg: "84px",md: "50px", base: 5}} gap={{base: "10px", md: "48px"}} gri>
@@ -76,9 +80,10 @@ const handleNavigate = () => {
                 </Text>
               </Box>
                 <Text fontSize={"16px"}>
-                Dam Seik Services Limited is an indigenous oil and gas servicing company in Nigeria providing innovative and cost effective services that have panned the better of 16 years.
-                 <br /> 
-                The Company has well structured administrative, sales and technical departments, professionally equipped to attend to clients needs. 
+                At Dam Seik Services Ltd, we are driven by a commitment to excellence, innovation, and reliability in the Oil & Gas and Marine sectors. Established to provide quality engineering and technical services, our operations span Well Services, Marine Support, and Pipeline Integrity — ensuring efficiency, safety, and long-term asset performance for our clients. <br /><br />
+
+                Our team comprises highly skilled professionals with years of hands-on experience across both offshore and    onshore environments. We combine local expertise with international best practices, allowing us to deliver    cost-effective solutions that meet the evolving demands of the energy industry. <br /><br />
+
                 </Text>   
                 <div className='hidden lg:block'>
                   <LearnMoreButton title='Contact Us' onClick={() => handleNavigate()} />    
@@ -87,13 +92,13 @@ const handleNavigate = () => {
 
               <Flex alignItems={"center"} justifyContent={"center"} flexDirection={"column"} gap={"15px"}>
                  <Text fontSize={"16px"} display={"grid"} gap={"10px"}>
-                  <b>Incorporated in Nigeria with</b> 
-                   <div>
-                    <b>Head office located at; </b>No 10 Second Avenue Federal Housing Estate Rumuemue, mile 4, Warehouse Plot 224 lyowuna Drive Trans Amadi Industrial Layout, PH.
-                    </div> 
-                    <div>
-                      <b>UK Office; </b>7 Linley Dell, stopsley Luton Bedfordshire Lu 28 TJUK, fax 01592612068.
-                    </div>
+                  <p>
+                  Headquartered in Port Harcourt, Nigeria, Dam Seik Services is strategically positioned to serve clients across West Africa and beyond. We work closely with our partners and clients to understand their unique operational needs, ensuring every project is executed with precision, integrity, and sustainability in mind.
+
+                  <br /><br />
+                  At Dam Seik, customer satisfaction is not just our goal — it is our promise. Through innovation, safety, and                  service excellence, we continue to support the success of our clients and the growth of the industry.
+                  </p>
+                  
                 </Text> 
                  <Box className='lg:hidden w-full h-full flex justify-start items-end' >
                   <LearnMoreButton title='Contact Us' onClick={() => handleNavigate()}/>    
@@ -103,24 +108,19 @@ const handleNavigate = () => {
     </Box>
 
 
-
-      
-
-    {/* Mission, Vision, Comittment */}
     <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{lg: "84px",md: "50px", base: 5}} gap={"34px"} >
          <Flex gap={"14px"}>
-               {/* Image */}
            <Box position="relative" w="full" h="full">
                 <Image
                   src="https://res.cloudinary.com/dnu4lxiie/image/upload/v1754126040/Frame_2147227074_tbpuua.svg"
-                  alt="Hero"
+                  alt="Dam Seik Services team and operations"
                   objectFit="cover"
                   w="full"
                   h="full"
                   borderRadius={"5%"}
+                  loading="lazy"
                 />
 
-                {/* Overlay */}
                 <Box
                   position="absolute"
                   top={0}
@@ -135,18 +135,17 @@ const handleNavigate = () => {
             </Box>
 
             <Grid  width={"full"} gap={"14px"}>
-                   {/* Image */}
            <Box position="relative" w="full">
                 <Image
                   src="https://res.cloudinary.com/dnu4lxiie/image/upload/v1754126040/Frame_2147227074_1_xtaqoe.svg"
-                  alt="Hero"
+                  alt="Dam Seik Services operations and facilities"
                   objectFit="cover"
                   w="full"
                   h="100%"
                   borderRadius={"5%"}
+                  loading="lazy"
                 />
 
-                {/* Overlay */}
                 <Box
                   position="absolute"
                   top={0}
@@ -188,7 +187,6 @@ const handleNavigate = () => {
          </Grid>
         </Grid>
 
-         {/* Quality Policy */}
          <Grid p={{lg: "84px",md: "50px", base: 5}} gap={10}  bg={"#F5F5F5"}>
          
             <Box display={"grid"} gridTemplateColumns={{md: "1fr 1fr"}} gap={10} alignItems={"center"} >
@@ -206,7 +204,12 @@ const handleNavigate = () => {
               </Text>
               </Box>
              <Box position={"relative"}>
-               <Image src='https://res.cloudinary.com/dnu4lxiie/image/upload/v1744955126/2149354008_nlrbbs.jpg' alt='Quality Policy' borderRadius={"5%"}/>
+               <Image 
+                 src='https://res.cloudinary.com/dnu4lxiie/image/upload/v1744955126/2149354008_nlrbbs.jpg' 
+                 alt='Dam Seik Services quality policy and standards' 
+                 borderRadius={"5%"}
+                 loading="lazy"
+               />
                 {/* Overlay */}
                 <Box
                   position="absolute"
@@ -225,7 +228,7 @@ const handleNavigate = () => {
 
 
     <Box bg="#F9FAFB" py={{ base: 10, md: 20 }}>
-      {/* Our Clients */}
+
       <Grid gap={8} px={{ base: 5, md: 24 }} textAlign="center">
         <Text
           color="#D10205"
@@ -262,16 +265,16 @@ const handleNavigate = () => {
             >
               <Image
                 src={item.image}
-                alt={item.id}
+                alt={`${item.id} - Client of Dam Seik Services`}
                 maxH="100px"
                 objectFit="contain"
+                loading="lazy"
               />
             </Box>
           ))}
         </Grid>
       </Grid>
 
-      {/* Our Partners */}
       <Grid gap={8} px={{ base: 5, md: 24 }} mt={{ base: 12, md: 16 }} textAlign="center">
         <Text
           color="#D10205"
@@ -308,9 +311,10 @@ const handleNavigate = () => {
             >
               <Image
                 src={item.image}
-                alt={item.id}
+                alt={`${item.id} - Client of Dam Seik Services`}
                 maxH="100px"
                 objectFit="contain"
+                loading="lazy"
               />
             </Box>
           ))}

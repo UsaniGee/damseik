@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Box, Heading, Text, chakra } from "@chakra-ui/react";
+import { Box, Heading, Text, Button, chakra } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -41,19 +42,20 @@ const HeroSection = () => {
   };
 
   const childVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 1, ease: "easeOut" },
     },
   };
 
   return (
-    <Box position="relative" w="100%" h={{ base: "70vh", md: "100vh" }} overflow="hidden">
+    <Box position="relative" w="100%" h="100vh" overflow="hidden">
       <Swiper
         modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 6000 }}
+        autoplay={{ delay: 7000, disableOnInteraction: false }}
+        speed={800}
         loop
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         style={{ width: "100%", height: "100%" }}
@@ -61,7 +63,6 @@ const HeroSection = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <Box w="100%" h="100%" position="relative" overflow="hidden">
-              {/* Video Background */}
               <Box
                 as="video"
                 src={slide.video}
@@ -69,29 +70,35 @@ const HeroSection = () => {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 objectFit="cover"
                 w="100%"
                 h="100%"
                 sx={{
+                  filter: "brightness(0.7) contrast(1.1) saturate(0.9)",
+                  transition: "filter 0.3s ease",
                   "@media (max-width: 768px)": {
-                    objectPosition: "center top", // Keep focus on top for mobile
+                    objectPosition: "center top", 
                   },
                   "@media (min-width: 769px)": {
-                    objectPosition: "center", // Normal desktop centering
+                    objectPosition: "center", 
                   },
                 }}
               />
 
-              {/* Glassmorphism Overlay */}
               <Box
                 position="absolute"
                 inset={0}
-                bg="rgba(0, 0, 0, 0.4)"
+                bgGradient="linear(to-b, rgba(0, 20, 40, 0.7) 0%, rgba(26, 32, 44, 0.8) 50%, rgba(20, 25, 35, 0.9) 100%)"
+                zIndex={1}
+              />
+              <Box
+                position="absolute"
+                inset={0}
+                bg="rgba(0, 51, 102, 0.4)"
                 zIndex={1}
               />
 
-              {/* Text Content */}
               <MotionBox
                 key={index}
                 display="flex"
@@ -111,25 +118,73 @@ const HeroSection = () => {
                 animate={activeIndex === index ? "visible" : "hidden"}
                 zIndex={2}
               >
+                <MotionBox variants={childVariants} mb={2}>
+                  <Text
+                    fontSize={{ base: "0.75rem", md: "0.875rem" }}
+                    fontWeight="700"
+                    letterSpacing="0.1em"
+                    textTransform="uppercase"
+                    color="white"
+                    fontFamily="'Poppins', sans-serif"
+                    opacity={0.95}
+                  >
+                    Powering Oil, Gas & Marine Engineering Solutions
+                  </Text>
+                </MotionBox>
+
                 <MotionBox variants={childVariants} mb={4}>
                   <Heading
                     fontSize={{ base: "2rem", md: "4rem" }}
-                    fontWeight="bold"
+                    fontWeight="800"
                     lineHeight="1.2"
-                    className="font-sora"
+                    fontFamily="'Poppins', sans-serif"
+                    color="white"
                   >
                     {slide.title}
                   </Heading>
                 </MotionBox>
 
-                <MotionBox variants={childVariants}>
+                <MotionBox variants={childVariants} mb={6}>
                   <Text
                     fontSize={{ base: "1rem", md: "1.25rem" }}
                     lineHeight="1.6"
                     maxW="480px"
+                    fontWeight="600"
+                    color="white"
+                    fontFamily="'Poppins', sans-serif"
                   >
                     {slide.subtitle}
                   </Text>
+                </MotionBox>
+
+                <MotionBox variants={childVariants}>
+                  <Button
+                    as={Link}
+                    to="/services"
+                    size={{ base: "md", md: "lg" }}
+                    bg="#D10205"
+                    color="white"
+                    fontSize={{ base: "0.875rem", md: "1rem" }}
+                    fontWeight="700"
+                    fontFamily="'Poppins', sans-serif"
+                    px={{ base: 6, md: 8 }}
+                    py={{ base: 5, md: 6 }}
+                    borderRadius="full"
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && window.trackCTA) {
+                        window.trackCTA('Explore Our Services', 'hero_section');
+                      }
+                    }}
+                    _hover={{
+                      bg: "#D10201",
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 0 20px rgba(0, 51, 102, 0.6), 0 10px 25px rgba(0, 0, 0, 0.3)",
+                    }}
+                    transition="all 0.3s ease"
+                    boxShadow="0 4px 15px rgba(0, 51, 102, 0.4)"
+                  >
+                    Explore Our Services
+                  </Button>
                 </MotionBox>
               </MotionBox>
             </Box>

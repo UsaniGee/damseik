@@ -12,6 +12,8 @@ const CareersHero = () => {
         { label: "Home", link: "/" },
         { label: "Careers", link: "/careers" }
       ]}
+      ctaText="Contact Us"
+      ctaLink="/contact"
     />
   );
 };

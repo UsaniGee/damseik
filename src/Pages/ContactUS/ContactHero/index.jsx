@@ -12,6 +12,8 @@ const ContactHero = () => {
         { label: "Home", link: "/" },
         { label: "Contact", link: "/contact" }
       ]}
+      ctaText="Explore Our Services"
+      ctaLink="/services"
     />
   );
 };

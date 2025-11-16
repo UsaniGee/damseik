@@ -12,6 +12,8 @@ const MediaHero = () => {
         { label: "Home", link: "/" },
         { label: "Media", link: "/media" }
       ]}
+      ctaText="View Our Projects"
+      ctaLink="/projects"
     />
   );
 };

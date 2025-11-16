@@ -9,49 +9,54 @@ import {
   useDisclosure,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import React from "react";
 
 const navItems = [
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Project", href: "/projects" },
-  { name: "Careers", href: "/careers" },
-  { name: "Media", href: "/media" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Projects", path: "/projects" },
+  { name: "Careers", path: "/careers" },
+  { name: "Media", path: "/media" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const Links = ({ color = "white" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [active, setActive] = useState("Media");
+  const location = useLocation();
 
-  const handleOnClick = (name) => {
-    setActive(name);
-    onClose();
-  };
-
-  const hoverColor = useColorModeValue("red.600", "red.400");
+  const hoverColor = "#D10205";
   const glassBg = useColorModeValue(
     "rgba(255, 255, 255, 0.7)",
     "rgba(26, 32, 44, 0.7)"
   );
 
-  const NavLinks = ({ onItemClick }) => (
+  const NavLinks = () => (
     <>
-      {navItems.map((link) => (
-        <ChakraLink
-          key={link.name}
-          href={link.href}
-          fontSize="lg"
-          fontWeight={600}
-          color={color}
-          _hover={{ color: hoverColor }}
-          onClick={() => onItemClick?.(link.name)}
-          transition="color 0.2s ease"
-          aria-current={active === link.name ? "page" : undefined}
-        >
-          {link.name}
-        </ChakraLink>
-      ))}
+      {navItems.map((link) => {
+        const isActive = location.pathname === link.path;
+        return (
+          <ChakraLink
+            key={link.name}
+            as={Link}
+            to={link.path}
+            fontSize="lg"
+            fontWeight={isActive ? 700 : 600}
+            color={isActive ? hoverColor : color}
+            _hover={{ color: hoverColor }}
+            onClick={onClose}
+            transition="color 0.2s ease"
+            aria-current={isActive ? "page" : undefined}
+            borderBottom={isActive ? "2px solid" : "none"}
+            borderColor={isActive ? hoverColor : "transparent"}
+            pb={1}
+          >
+            {link.name}
+          </ChakraLink>
+        );
+      })}
     </>
   );
 
@@ -59,7 +64,7 @@ const Links = ({ color = "white" }) => {
     <Box>
       {/* Desktop */}
       <Flex gap={6} display={{ base: "none", md: "flex" }}>
-        <NavLinks onItemClick={handleOnClick} />
+        <NavLinks />
       </Flex>
 
       {/* Mobile */}
@@ -76,6 +81,8 @@ const Links = ({ color = "white" }) => {
           justifyContent="center"
           cursor="pointer"
           zIndex="1100"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
         >
           <Box
             as="span"
@@ -109,7 +116,6 @@ const Links = ({ color = "white" }) => {
           />
         </Box>
 
-        {/* Glassy Drawer */}
         <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
           <DrawerOverlay />
           <DrawerContent
@@ -117,7 +123,7 @@ const Links = ({ color = "white" }) => {
             backdropFilter="blur(12px)"
             p={8}
             boxShadow="xl"
-            mt="60px" // Moves it slightly down below the top bar
+            mt="60px" 
             borderLeft="1px solid rgba(255,255,255,0.2)"
           >
             <DrawerBody>
@@ -128,17 +134,23 @@ const Links = ({ color = "white" }) => {
                 fontSize="lg"
                 fontWeight={500}
               >
-                {navItems.map((link) => (
-                  <ChakraLink
-                    key={link.name}
-                    href={link.href}
-                    color={useColorModeValue("gray.900", "white")}
-                    _hover={{ color: hoverColor }}
-                    onClick={() => handleOnClick(link.name)}
-                  >
-                    {link.name}
-                  </ChakraLink>
-                ))}
+                {navItems.map((link) => {
+                  const isActive = location.pathname === link.path;
+                  return (
+                    <ChakraLink
+                      key={link.name}
+                      as={Link}
+                      to={link.path}
+                      color={isActive ? hoverColor : useColorModeValue("gray.900", "white")}
+                      fontWeight={isActive ? 700 : 500}
+                      _hover={{ color: hoverColor }}
+                      onClick={onClose}
+                      aria-current={isActive ? "page" : undefined}
+                    >
+                      {link.name}
+                    </ChakraLink>
+                  );
+                })}
               </Flex>
             </DrawerBody>
           </DrawerContent>

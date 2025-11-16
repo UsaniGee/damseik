@@ -1,12 +1,19 @@
-import { Box, Grid, Heading, Text, Image, Link, Flex } from '@chakra-ui/react'
+import { Box, Grid, Heading, Text, Image, Link as ChakraLink, Flex } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 import React from 'react'
 import ProjectsHero from './ProjectsHero'
 import { projects } from '../LandingPage/OurRecentprojects'
 import LearnMoreButton from '../../components/LearnMoreBtn'
+import SEO from '../../components/SEO'
 
 const Projects = () => {
   return (
     <Box>
+      <SEO 
+        title="Projects"
+        description="Explore our featured projects in oil & gas services. Water re-injection, well intervention, high-pressure pumping, and nitrogen lift operations across Nigeria."
+        keywords="oil and gas projects, pipeline projects, well intervention projects, water injection projects, nigeria oil projects"
+      />
       <ProjectsHero />
 
       <Box p={{ lg: "84px", md: "50px", base: 5 }} bg={"#F5F5F5"}>
@@ -35,12 +42,13 @@ const Projects = () => {
               >
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={`${item.title} project by Dam Seik Services`}
                   h="full"
                   w="full"
                   objectFit="cover"
                   transition="transform 0.4s ease-in-out"
                   _hover={{ transform: "scale(1.08)" }}
+                  loading="lazy"
                 />
                
                 <Box
@@ -61,9 +69,9 @@ const Projects = () => {
                 <Text fontSize="16px" color="gray.600">
                   {item.subTitle}
                 </Text>
-                <Link href={item.id} _hover={{ textDecoration: "none" }}>
+                <ChakraLink as={Link} to={item.id} _hover={{ textDecoration: "none" }}>
                   <LearnMoreButton title="Read more" />
-                </Link>
+                </ChakraLink>
               </Flex>
             </Box>
           ))}

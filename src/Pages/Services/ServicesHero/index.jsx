@@ -80,12 +80,12 @@ const ServicesHero = () => {
     <PagesHero
     imageSrc={image}
       title={title}
-      // subtitle={subtitle}
-      // subtitle1={subtitle1}
       breadcrumb={[
         { label: "Home", link: "/" },
         { label: "Services", link: "/services" }
       ]}
+      ctaText="Contact Us"
+      ctaLink="/contact"
     />
   );
 };
