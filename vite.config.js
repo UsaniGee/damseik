@@ -10,7 +10,11 @@ export default defineConfig({
     })
   ],
   resolve: {
-    dedupe: ['react', 'react-dom'],
+    dedupe: ['react', 'react-dom', 'scheduler'],
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react/jsx-runtime'],
+    force: true,
   },
   build: {
     chunkSizeWarningLimit: 1500,
@@ -22,7 +26,15 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
+            if (
+              id.includes('/react/') ||
+              id.includes('/react-dom/') ||
+              id.includes('/scheduler/') ||
+              id.includes('react/jsx-runtime') ||
+              id.includes('react/jsx-dev-runtime') ||
+              id.includes('react-is') ||
+              id.includes('react-refresh')
+            ) {
               return 'vendor-react'
             }
             if (id.includes('react-router')) return 'vendor-react-router'
