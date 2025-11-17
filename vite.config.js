@@ -71,25 +71,21 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
+        chunkFileNames: (chunkInfo) => {
+          const chunkName = chunkInfo.name
+          if (chunkName === 'vendor-react') {
+            return 'assets/vendor-react-[hash].js'
+          }
+          if (chunkName === 'vendor-swiper') {
+            return 'assets/vendor-swiper-[hash].js'
+          }
+          if (chunkName === 'vendor') {
+            return 'assets/vendor-[hash].js'
+          }
+          return 'assets/[name]-[hash].js'
+        },
         manualChunks(id, { getModuleInfo }) {
           if (id.includes('node_modules')) {
-            const moduleInfo = getModuleInfo(id)
-            if (moduleInfo) {
-              const hasReactDep = moduleInfo.importers?.some(importer => 
-                importer.includes('/react/') || 
-                importer.includes('react-dom') ||
-                importer.includes('vendor-react')
-              ) || moduleInfo.dynamicImporters?.some(importer =>
-                importer.includes('/react/') || 
-                importer.includes('react-dom') ||
-                importer.includes('vendor-react')
-              )
-              
-              if (hasReactDep && !id.includes('swiper')) {
-                return 'vendor-react'
-              }
-            }
-            
             if (
               id.includes('/react/') ||
               id.includes('/react-dom/') ||
@@ -108,11 +104,46 @@ export default defineConfig({
               id.includes('@chakra-ui') ||
               id.includes('@emotion') ||
               id.includes('@cloudinary/react') ||
+              id.includes('@cloudinary/url-gen') ||
               id.includes('framer-motion') ||
               id.includes('next-themes')
             ) {
               return 'vendor-react'
             }
+            
+            const moduleInfo = getModuleInfo(id)
+            if (moduleInfo) {
+              const allImporters = [
+                ...(moduleInfo.importers || []),
+                ...(moduleInfo.dynamicImporters || [])
+              ]
+              
+              const hasReactImporter = allImporters.some(importer => 
+                importer.includes('/react/') || 
+                importer.includes('react-dom') ||
+                importer.includes('vendor-react') ||
+                importer.includes('@chakra-ui') ||
+                importer.includes('@emotion') ||
+                importer.includes('@cloudinary/react') ||
+                importer.includes('framer-motion') ||
+                importer.includes('next-themes')
+              )
+              
+              const importsReact = moduleInfo.importedIds?.some(importedId =>
+                importedId.includes('/react/') ||
+                importedId.includes('react-dom') ||
+                importedId.includes('react/jsx-runtime') ||
+                importedId.includes('vendor-react') ||
+                importedId.includes('@chakra-ui') ||
+                importedId.includes('@emotion') ||
+                importedId.includes('framer-motion')
+              )
+            
+              if ((hasReactImporter || importsReact) && !id.includes('swiper')) {
+                return 'vendor-react'
+              }
+            }
+            
             if (id.includes('swiper')) return 'vendor-swiper'
             return 'vendor'
           }
