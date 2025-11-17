@@ -22,7 +22,7 @@ import {
 import React from "react";
 import Logo from "../Navbar/Logo";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const NAV_LINKS = [
   { name: "About", href: "/about" },

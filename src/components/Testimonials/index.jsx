@@ -11,7 +11,7 @@ import {
 import { motion } from 'framer-motion';
 import React from 'react';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const Testimonials = ({ testimonials, title = "What Our Clients Say" }) => {
   const defaultTestimonials = [

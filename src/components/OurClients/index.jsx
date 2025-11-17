@@ -1,8 +1,8 @@
 import { Box, Image, Text, useToken, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-const MotionBox = motion(Box);
-const MotionImage = motion(Image);
+const MotionBox = motion.create(Box);
+const MotionImage = motion.create(Image);
 
 const clientLogos = [
   { image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1745939085/shell_we0rhr.jpg", name: "Shell" },

@@ -12,7 +12,7 @@ import { GiAnchor } from "react-icons/gi";
 import { motion } from "framer-motion";
 import React from "react";
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const WhatWeDo = () => {
   const Services = [

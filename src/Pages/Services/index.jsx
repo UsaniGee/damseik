@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import LearnMoreButton from '../../components/LearnMoreBtn/index';
 import SEO from '../../components/SEO';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const ourCoreServices = [
   {
