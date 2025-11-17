@@ -33,13 +33,20 @@ export default defineConfig({
               id.includes('react/jsx-runtime') ||
               id.includes('react/jsx-dev-runtime') ||
               id.includes('react-is') ||
-              id.includes('react-refresh')
+              id.includes('react-refresh') ||
+              id.includes('react-router') ||
+              id.includes('react-hook-form') ||
+              id.includes('react-icons') ||
+              id.includes('react-focus-lock') ||
+              id.includes('react-remove-scroll') ||
+              id.includes('react-style-singleton') ||
+              id.includes('react-clientside-effect') ||
+              id.includes('@chakra-ui') ||
+              id.includes('@emotion') ||
+              id.includes('framer-motion')
             ) {
               return 'vendor-react'
             }
-            if (id.includes('react-router')) return 'vendor-react-router'
-            if (id.includes('@chakra-ui') || id.includes('@emotion')) return 'vendor-chakra'
-            if (id.includes('framer-motion')) return 'vendor-framer-motion'
             if (id.includes('swiper')) return 'vendor-swiper'
             return 'vendor'
           }
