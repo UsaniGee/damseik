@@ -27,10 +27,10 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Write tests: `canonicalUrl()` builds `https://www.damseik.com` URLs, strips trailing slash (except root), lowercases host, ignores query/hash
     - [x] Implement `src/config/site.js` (`SITE_URL` from `VITE_SITE_URL`, `BRAND_NAME = "Dam Seik"`, default OG image path)
     - [x] Replace all `damseikservices.com` references in `src/`, `scripts/`, `public/` with the config
-- [ ] Task: Route manifest (FR-3)
-    - [ ] Write tests: every manifest path is unique, lowercase-safe, has title + description, matches an existing page; indexable routes exclude 404
-    - [ ] Implement `src/routes/manifest.js` (path, lazy import, title, description, indexable, lastmod) seeded from existing page copy (no new claims)
-    - [ ] Refactor `src/App.jsx` to build the router from the manifest; verify every existing URL still renders
+- [x] Task: Route manifest (FR-3) baa2509
+    - [x] Write tests: every manifest path is unique, lowercase-safe, has title + description, matches an existing page; indexable routes exclude 404
+    - [x] Implement `src/routes/manifest.js` (path, lazy import, title, description, indexable, lastmod) seeded from existing page copy (no new claims)
+    - [x] Refactor `src/App.jsx` to build the router from the manifest; verify every existing URL still renders
 - [ ] Task: SEO tag builder
     - [ ] Write tests: builder returns title, description, canonical, robots, OG/Twitter tags, JSON-LD for a manifest entry; brand is "Dam Seik"; no `keywords` tag
     - [ ] Implement `src/lib/seo.js`; refactor `src/components/SEO` to use it
