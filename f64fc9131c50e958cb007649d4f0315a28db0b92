@@ -1,0 +1,5 @@
+Task: Add test tooling (Phase 1, foundation_20261023)
+Changes: added vitest 3, @vitest/coverage-v8, jsdom, @testing-library/{react,dom,jest-dom}; test/test:coverage scripts; vitest config (jsdom, setup file, coverage scoped to logic modules) in vite.config.js; ESLint globals for test files and Node scripts; SkipToContent smoke test.
+Files: package.json, package-lock.json, vite.config.js, eslint.config.js, src/test/setup.js, src/components/SkipToContent/SkipToContent.test.jsx
+Why: workflow requires TDD for logic tasks; project had no test runner.
+Verification: CI=true npx vitest run -> 1/1 passed. Pre-existing lint errors (18) unchanged, logged for audit.
