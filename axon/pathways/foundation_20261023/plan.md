@@ -10,15 +10,15 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Install `vitest`, `@vitest/coverage-v8`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom` (dev)
     - [x] Add `test` and `test:coverage` scripts; `vitest` config in `vite.config.js` (jsdom env, setup file)
     - [x] Add a smoke test and confirm `CI=true npx vitest run` passes
-- [ ] Task: Record performance baseline (FR-1)
-    - [ ] Build current `main` and run Lighthouse (mobile + desktop) against `https://www.damseik.com` for `/`, `/services`, `/services/valve-services`, `/projects`, `/projects/well-intervention-rivers-state`, `/contact`
-    - [ ] Record PSI field data (CrUX) where available, labelled as field data
-    - [ ] Generate a bundle composition report (`rollup-plugin-visualizer`, temporary) and list the largest modules
-    - [ ] List render-blocking resources, fonts, image sizes/formats, third-party requests
-    - [ ] Write `docs/audit/baseline.md` with test conditions and a prioritized bottleneck list
-- [ ] Task: Record URL & SEO inventory (FR-1)
-    - [ ] For every route in `src/App.jsx` + live sitemap: status code, title, description, canonical, H1
-    - [ ] Write `docs/audit/url-inventory.md`
+- [x] Task: Record performance baseline (FR-1) 2b9f774
+    - [x] Build current `main` and run Lighthouse (mobile + desktop) against `https://www.damseik.com` for `/`, `/services`, `/services/valve-services`, `/projects`, `/projects/well-intervention-rivers-state`, `/contact`
+    - [x] Record PSI field data (CrUX) where available, labelled as field data
+    - [x] Generate a bundle composition report (`rollup-plugin-visualizer`, temporary) and list the largest modules
+    - [x] List render-blocking resources, fonts, image sizes/formats, third-party requests
+    - [x] Write `docs/audit/baseline.md` with test conditions and a prioritized bottleneck list
+- [x] Task: Record URL & SEO inventory (FR-1) a4a9637
+    - [x] For every route in `src/App.jsx` + live sitemap: status code, title, description, canonical, H1
+    - [x] Write `docs/audit/url-inventory.md`
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 2: Site Config & Route Manifest
