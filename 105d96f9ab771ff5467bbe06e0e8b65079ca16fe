@@ -1,0 +1,6 @@
+Task: Site configuration module (FR-2)
+Changes: new src/config/site.js (SITE_URL from VITE_SITE_URL, default https://www.damseik.com; BRAND_NAME; CONTACT_EMAIL info@damseik.com (user-supplied); CONTACT_PHONE; LOGO_URL; temporary DEFAULT_OG_IMAGE = logo padded 1200x630 via Cloudinary; canonicalUrl()). SEO + StructuredData use config; sameAs removed (user: unverified). Contact page, ContactForm, FAQ emails -> CONTACT_EMAIL. generate-sitemap uses SITE_URL; public/sitemap.xml regenerated.
+Files: src/config/site.js, src/config/site.test.js, src/components/SEO/index.jsx, src/components/StructuredData/index.jsx, src/components/FAQ/index.jsx, src/Pages/ContactUS/index.jsx, src/Pages/ContactUS/ContactForm/index.jsx, scripts/generate-sitemap.js, public/sitemap.xml
+Why: damseikservices.com is not registered (no NS/MX) so canonicals/sitemap pointed nowhere and enquiry emails bounced.
+Verification: TDD red->green, 10 config tests pass (11 total); eslint clean on changed files except pre-existing ContactForm unused vars; vite build OK; grep dist for damseikservices -> none; Cloudinary transform URLs return 200.
+Dependency: damseik.com has NO MX record — info@damseik.com will bounce until mail hosting is configured (launch blocker).
