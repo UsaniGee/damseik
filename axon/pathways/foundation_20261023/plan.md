@@ -39,7 +39,7 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Verify with `grep` over `dist/` after build
 - [x] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
-## Phase 3: Build-Time Prerendering & Status Codes
+## Phase 3: Build-Time Prerendering & Status Codes [checkpoint: 9ab4367]
 
 - [x] Task: One H1 per page (plan amendment — required by spec §4.3 and this pathway's acceptance criteria) 216384f
     - [x] Write test: `Pageshero` renders its title as the page's only `h1`
@@ -59,11 +59,11 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Replace the SPA catch-all rewrite in `vercel.json`; set `cleanUrls`, `trailingSlash: false`
     - [x] Verify locally with an equivalent static server (cleanUrls, no trailing slash): routes 200, `/does-not-exist` 404 with `404.html`
     - [ ] Verify on a Vercel preview — deferred to Phase 4 (user decision), see Phase 4 task "Vercel preview verification"
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 4: robots.txt, Sitemap & Redirects
 
-- [ ] Task: robots.txt (FR-5)
+- [~] Task: robots.txt (FR-5)
     - [ ] Add `public/robots.txt` (allow all, `Sitemap: https://www.damseik.com/sitemap.xml`)
 - [ ] Task: Manifest-driven sitemap (FR-5)
     - [ ] Write tests: sitemap includes only indexable manifest routes on `SITE_URL`, valid XML, excludes 404/noindex, `lastmod` only when set
