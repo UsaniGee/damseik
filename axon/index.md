@@ -10,3 +10,8 @@
 
 -   [Workflow](./workflow.md)
 -   [Code Style Guides](./code_styleguides/)
+
+## Pathways
+
+-   [Pathways Registry](./pathways.md)
+-   [Pathways Directory](./pathways/)
