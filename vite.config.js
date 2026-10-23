@@ -63,6 +63,17 @@ export default defineConfig({
     include: ['react', 'react-dom', 'react/jsx-runtime'],
     force: true,
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: ['./src/test/setup.js'],
+    include: ['src/**/*.test.{js,jsx}', 'scripts/**/*.test.js', 'api/**/*.test.js'],
+    coverage: {
+      provider: 'v8',
+      include: ['src/lib/**', 'src/config/**', 'src/routes/**', 'scripts/**', 'api/**'],
+      exclude: ['**/*.test.*'],
+    },
+  },
   build: {
     chunkSizeWarningLimit: 1500,
     commonjsOptions: {
