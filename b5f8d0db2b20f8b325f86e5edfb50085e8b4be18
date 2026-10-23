@@ -1,0 +1,4 @@
+Task: Brand metadata correction (FR-9)
+Changes: index.html (title/description/og tags -> Dam Seik home metadata, keywords removed, og:locale en_GB, favicon image/png 64px Cloudinary transform 6.5KB); public/manifest.json name/description; Logo aria-label/alt; Pageshero and OurClients alt templates. StructuredData was already removed in the SEO builder task.
+Deliberately unchanged (pathway 2 content review): body copy using 'Dam Seik Services Ltd/Limited' (may be legal-name usage), footer copyright line, testimonial quotes, FAQ copy.
+Verification: vite build OK; grep dist -> 0 'Damsiek', 0 keywords meta, 0 damseikservices; 32 tests pass.
