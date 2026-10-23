@@ -63,9 +63,9 @@ build/render/Lighthouse verification for presentational changes)
 
 ## Phase 4: robots.txt, Sitemap & Redirects
 
-- [~] Task: robots.txt (FR-5)
-    - [ ] Add `public/robots.txt` (allow all, `Sitemap: https://www.damseik.com/sitemap.xml`)
-- [ ] Task: Manifest-driven sitemap (FR-5)
+- [x] Task: robots.txt (FR-5) 764bd79
+    - [x] Generate `dist/robots.txt` at build from `SITE_URL` (allow all, `Sitemap: https://www.damseik.com/sitemap.xml`)
+- [~] Task: Manifest-driven sitemap (FR-5)
     - [ ] Write tests: sitemap includes only indexable manifest routes on `SITE_URL`, valid XML, excludes 404/noindex, `lastmod` only when set
     - [ ] Rewrite `scripts/generate-sitemap.js` to consume the manifest; remove the committed stale `public/sitemap.xml`
 - [ ] Task: Redirect map (FR-6)
