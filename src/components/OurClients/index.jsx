@@ -86,7 +86,7 @@ const OurClientsCarousel = () => {
             >
               <MotionImage
                 src={client.image}
-                alt={`${client.name} - Client of Dam Seik Services`}
+                alt={`${client.name} - Client of Dam Seik`}
                 objectFit="contain"
                 maxH="100%"
                 maxW="100%"

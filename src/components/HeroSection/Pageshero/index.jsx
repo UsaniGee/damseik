@@ -16,7 +16,7 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb, ctaText, 
   
       <Image
         src={imageSrc}
-        alt={`${title} - Dam Seik Services`}
+        alt={`${title} - Dam Seik`}
         objectFit="cover"
         objectPosition="center"
         w="100%"
