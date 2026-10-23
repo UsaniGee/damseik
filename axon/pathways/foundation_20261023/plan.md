@@ -6,10 +6,10 @@ build/render/Lighthouse verification for presentational changes)
 
 ## Phase 1: Tooling & Baseline Audit
 
-- [ ] Task: Add test tooling
-    - [ ] Install `vitest`, `@vitest/coverage-v8`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom` (dev)
-    - [ ] Add `test` and `test:coverage` scripts; `vitest` config in `vite.config.js` (jsdom env, setup file)
-    - [ ] Add a smoke test and confirm `CI=true npx vitest run` passes
+- [x] Task: Add test tooling f64fc91
+    - [x] Install `vitest`, `@vitest/coverage-v8`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom` (dev)
+    - [x] Add `test` and `test:coverage` scripts; `vitest` config in `vite.config.js` (jsdom env, setup file)
+    - [x] Add a smoke test and confirm `CI=true npx vitest run` passes
 - [ ] Task: Record performance baseline (FR-1)
     - [ ] Build current `main` and run Lighthouse (mobile + desktop) against `https://www.damseik.com` for `/`, `/services`, `/services/valve-services`, `/projects`, `/projects/well-intervention-rivers-state`, `/contact`
     - [ ] Record PSI field data (CrUX) where available, labelled as field data
