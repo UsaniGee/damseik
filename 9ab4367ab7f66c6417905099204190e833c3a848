@@ -1,0 +1,4 @@
+Task: Vercel routing & 404 (FR-4)
+Changes: vercel.json — removed rewrites /(.*) -> /index.html; added cleanUrls: true, trailingSlash: false.
+Verification: local equivalent with serve@14 (cleanUrls, trailingSlash false) — routes 200, /services/ 301 -> /services, /x.html 301 -> /x, unknown 404 with 404.html.
+Vercel preview verification deferred (user decision) until after Phase 4 redirects, because legacy mixed-case URLs need redirects before deploy. Plan sub-task left open and carried to Phase 4.
