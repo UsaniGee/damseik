@@ -1,0 +1,3 @@
+Task: Client hydration (FR-4) — verification completed after prerender (ea0583c)
+Changes (687826c): App uses AppShell + routeObjects + shared emotion cache key; main.jsx preloads current route chunk then hydrateRoot when #root has markup, else createRoot.
+Verification: all 21 prerendered routes + 404 loaded in headless Chrome via CDP against serve@14: 1 h1 each, no React hydration errors (#418/#423/#425) or exceptions. Container has __reactContainer key after load; clicking /projects link performs client-side navigation (window marker preserved, path /projects, SEO component updated title/canonical). On this loaded host hydration completes between 8 and 15 s (mobile CPU impact addressed by Phase 5 bundle work); links work as full page loads before hydration.
