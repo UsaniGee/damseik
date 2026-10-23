@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { SITE_URL } from '../src/config/site.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -64,5 +64,17 @@ ${routes
   console.log(`   Total URLs: ${routes.length}`);
 };
 
-generateSitemap();
+/**
+ * robots.txt allowing all crawling and pointing to the canonical sitemap.
+ * @param {string} siteUrl canonical origin without trailing slash
+ * @returns {string}
+ */
+export const buildRobotsTxt = (siteUrl) => `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`;
 
+const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isMain) {
+  generateSitemap();
+  const distDir = path.join(__dirname, '..', 'dist');
+  fs.writeFileSync(path.join(distDir, 'robots.txt'), buildRobotsTxt(SITE_URL), 'utf8');
+  console.log(`robots.txt generated at ${path.join(distDir, 'robots.txt')}`);
+}
