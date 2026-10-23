@@ -34,9 +34,9 @@ build/render/Lighthouse verification for presentational changes)
 - [x] Task: SEO tag builder 6047d63
     - [x] Write tests: builder returns title, description, canonical, robots, OG/Twitter tags, JSON-LD for a manifest entry; brand is "Dam Seik"; no `keywords` tag
     - [x] Implement `src/lib/seo.js`; refactor `src/components/SEO` to use it
-- [ ] Task: Brand metadata correction (FR-9)
-    - [ ] Update `index.html` and `StructuredData` to remove "Damsiek Limited" / "Dam Seik Services" as the site name and the `meta keywords` tag
-    - [ ] Verify with `grep` over `dist/` after build
+- [x] Task: Brand metadata correction (FR-9) b5f8d0d
+    - [x] Update `index.html` and `StructuredData` to remove "Damsiek Limited" / "Dam Seik Services" as the site name and the `meta keywords` tag
+    - [x] Verify with `grep` over `dist/` after build
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 3: Build-Time Prerendering & Status Codes
