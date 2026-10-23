@@ -62,7 +62,7 @@ const handleNavigate = () => {
    <Box>
       <AboutHero />
       <Box bg={"#F5F5F5"}>
-        <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{lg: "84px",md: "50px", base: 5}} gap={{base: "10px", md: "48px"}} gri>
+        <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{lg: "84px",md: "50px", base: 5}} gap={{base: "10px", md: "48px"}}>
           
            <Grid gap={5}>
               <Box>
