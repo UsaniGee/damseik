@@ -2,7 +2,6 @@ import { Box, Grid, Heading, Text, VStack, Button, Flex } from '@chakra-ui/react
 import React from 'react'
 import CareersHero from './CareersHero'
 import { Link } from 'react-router-dom'
-import SEO from '../../components/SEO'
 
 const Careers = () => {
   const benefits = [
@@ -35,11 +34,6 @@ const Careers = () => {
 
   return (
     <Box>
-      <SEO 
-        title="Careers"
-        description="Join Dam Seik Services - Be part of a diverse team delivering excellence in oil & gas services. Explore career opportunities and employee benefits."
-        keywords="careers, jobs, employment, oil and gas jobs nigeria, engineering careers"
-      />
       <CareersHero />
       
       {/* Main Content */}

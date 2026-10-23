@@ -2,17 +2,11 @@ import { Box, Grid, Text } from '@chakra-ui/react'
 import React from 'react'
 import ContactHero from './ContactHero'
 import ContactForm from './ContactForm'
-import SEO from '../../components/SEO'
 import { CONTACT_EMAIL } from '../../config/site'
 
 const Contact = () => {
   return (
    <Box>
-      <SEO 
-        title="Contact Us"
-        description="Get in touch with Dam Seik Services. Contact our team for inquiries about oil & gas services, pipeline maintenance, well services, and marine support."
-        keywords="contact dam seik, inquiry, oil and gas services contact, pipeline services contact"
-      />
       <ContactHero />
       <Box p={{md: 24, base: 5}}>
          <Grid gridTemplateColumns={{md: "1fr 1fr 1fr"}} gap={20}>

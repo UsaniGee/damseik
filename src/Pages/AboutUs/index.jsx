@@ -6,7 +6,6 @@ import LearnMoreButton from '../../components/LearnMoreBtn'
 import { center } from '@cloudinary/url-gen/qualifiers/textAlignment'
 import { full } from '@cloudinary/url-gen/qualifiers/fontHinting'
 import { useNavigate } from 'react-router-dom'
-import SEO from '../../components/SEO'
 
 const AboutUs = () => {
 const clients = [
@@ -61,11 +60,6 @@ const handleNavigate = () => {
 
   return (
    <Box>
-      <SEO 
-        title="About Us"
-        description="Learn about Dam Seik Services Limited - Over 36 years of excellence in oil & gas services. Our mission, vision, and commitment to quality engineering solutions in Nigeria."
-        keywords="about dam seik, oil and gas company nigeria, pipeline services company, well services provider, marine engineering services"
-      />
       <AboutHero />
       <Box bg={"#F5F5F5"}>
         <Grid gridTemplateColumns={{md: "1fr 1fr"}} p={{lg: "84px",md: "50px", base: 5}} gap={{base: "10px", md: "48px"}} gri>

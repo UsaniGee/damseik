@@ -1,7 +1,6 @@
 import { Box, Grid, Image, Heading, Text } from '@chakra-ui/react'
 import React from 'react'
 import MediaHero from './MediaHero'
-import SEO from '../../components/SEO'
 
 const Media = () => {
   const mediaItems = [
@@ -27,11 +26,6 @@ const Media = () => {
 
   return (
     <Box>
-      <SEO 
-        title="Media"
-        description="View images and media from previous projects completed by Dam Seik Services Limited. See our work in pipeline services, well services, and marine engineering."
-        keywords="dam seik projects, oil and gas project images, pipeline project photos, well services photos"
-      />
       <MediaHero />
       <Box px={{md: 14, base: 5}} py={{md: 16, base: 10}}>
         <Heading fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" mb={8} textAlign="center" color="#D10205">

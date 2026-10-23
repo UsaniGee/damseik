@@ -4,16 +4,10 @@ import React from 'react'
 import ProjectsHero from './ProjectsHero'
 import { projects } from '../LandingPage/OurRecentprojects'
 import LearnMoreButton from '../../components/LearnMoreBtn'
-import SEO from '../../components/SEO'
 
 const Projects = () => {
   return (
     <Box>
-      <SEO 
-        title="Projects"
-        description="Explore our featured projects in oil & gas services. Water re-injection, well intervention, high-pressure pumping, and nitrogen lift operations across Nigeria."
-        keywords="oil and gas projects, pipeline projects, well intervention projects, water injection projects, nigeria oil projects"
-      />
       <ProjectsHero />
 
       <Box p={{ lg: "84px", md: "50px", base: 5 }} bg={"#F5F5F5"}>
