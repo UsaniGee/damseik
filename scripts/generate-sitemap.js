@@ -1,67 +1,34 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { SITE_URL } from '../src/config/site.js';
+import { SITE_URL, canonicalUrl } from '../src/config/site.js';
+import { routes } from '../src/routes/manifest.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const baseUrl = SITE_URL;
+const escapeXml = (value) =>
+  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-const routes = [
-  { url: '/', changefreq: 'daily', priority: 1.0 },
-  { url: '/about', changefreq: 'monthly', priority: 0.8 },
-  { url: '/services', changefreq: 'weekly', priority: 0.9 },
-  { url: '/services/equipment-leasing', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/coating-and-repair-products', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/process-instrumentation', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/quality-control-services', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/pipeline-facility-production-maintenace', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/valve-services', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/marine-support-services', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/procurement', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/well-service', changefreq: 'monthly', priority: 0.7 },
-  { url: '/services/production-chemical-services', changefreq: 'monthly', priority: 0.7 },
-  { url: '/projects', changefreq: 'weekly', priority: 0.8 },
-  { url: '/projects/water-re-injection-project-umusadege-1-kwale-delta-state', changefreq: 'monthly', priority: 0.6 },
-  { url: '/projects/well-intervention-rivers-state', changefreq: 'monthly', priority: 0.6 },
-  { url: '/projects/high-Pressure-pumping-support-for-coil-tubing-operation-rivers-state', changefreq: 'monthly', priority: 0.6 },
-  { url: '/projects/nitrogen-lift-operation-cawc-well-45T-rivers-state-swamp', changefreq: 'monthly', priority: 0.6 },
-  { url: '/contact', changefreq: 'monthly', priority: 0.8 },
-  { url: '/careers', changefreq: 'monthly', priority: 0.7 },
-  { url: '/media', changefreq: 'weekly', priority: 0.6 },
-];
+/**
+ * Sitemap of indexable routes only, as canonical production URLs.
+ * `lastmod` is emitted only for routes that declare a genuine modification date.
+ * @param {{ path: string, indexable: boolean, lastmod?: string }[]} routeList
+ * @returns {string}
+ */
+export const buildSitemap = (routeList) => {
+  const urls = routeList
+    .filter((route) => route.indexable)
+    .map((route) => {
+      const lastmod = route.lastmod ? `\n    <lastmod>${route.lastmod}</lastmod>` : '';
+      return `  <url>\n    <loc>${escapeXml(canonicalUrl(route.path))}</loc>${lastmod}\n  </url>`;
+    });
 
-const generateSitemap = () => {
-  const currentDate = new Date().toISOString().split('T')[0];
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-${routes
-  .map(
-    (route) => `  <url>
-    <loc>${baseUrl}${route.url}</loc>
-    <lastmod>${currentDate}</lastmod>
-    <changefreq>${route.changefreq}</changefreq>
-    <priority>${route.priority}</priority>
-  </url>`
-  )
-  .join('\n')}
-</urlset>`;
-
-  const publicDir = path.join(__dirname, '..', 'public');
-  const sitemapPath = path.join(publicDir, 'sitemap.xml');
-
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
-  }
-
-  fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-  console.log(`Sitemap generated successfully at ${sitemapPath}`);
-  console.log(`   Total URLs: ${routes.length}`);
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join('\n')}
+</urlset>
+`;
 };
 
 /**
@@ -73,8 +40,9 @@ export const buildRobotsTxt = (siteUrl) => `User-agent: *\nAllow: /\n\nSitemap: 
 
 const isMain = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (isMain) {
-  generateSitemap();
   const distDir = path.join(__dirname, '..', 'dist');
+  const sitemap = buildSitemap(routes);
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap, 'utf8');
   fs.writeFileSync(path.join(distDir, 'robots.txt'), buildRobotsTxt(SITE_URL), 'utf8');
-  console.log(`robots.txt generated at ${path.join(distDir, 'robots.txt')}`);
+  console.log(`sitemap.xml (${sitemap.match(/<url>/g).length} URLs) and robots.txt written to ${distDir}`);
 }
