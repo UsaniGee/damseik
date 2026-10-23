@@ -1,0 +1,3 @@
+Task: robots.txt (FR-5)
+Changes: scripts/generate-sitemap.js exports buildRobotsTxt(siteUrl); main guard (isMain) so import has no side effects; writes dist/robots.txt. Deviation from plan wording: generated from SITE_URL at build instead of a static public/robots.txt, so it can't drift from the canonical origin.
+Verification: 2 tests red->green; dist/robots.txt content checked; served by serve@14 as 200 text/plain. Vercel preview check in Phase 4 preview task.
