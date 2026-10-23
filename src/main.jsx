@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { findRoute } from './routes/manifest'
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -15,8 +16,20 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root')
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 )
+
+// Load the current page's chunk first so hydration does not fall back to the spinner.
+findRoute(window.location.pathname)
+  .load()
+  .finally(() => {
+    if (container.hasChildNodes()) {
+      hydrateRoot(container, app)
+    } else {
+      createRoot(container).render(app)
+    }
+  })

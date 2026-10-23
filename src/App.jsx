@@ -1,47 +1,17 @@
-import React, { Suspense, lazy } from 'react'
+import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { ChakraProvider, theme, Spinner, Center } from '@chakra-ui/react'
-import Root from './Layout/Root'
-import ErrorBoundary from './components/ErrorBoundary'
-import { notFoundRoute, routes } from './routes/manifest'
+import AppShell from './AppShell'
+import { createEmotionCache } from './lib/emotionCache'
+import { routeObjects } from './routes/routeObjects'
 
-// Loading fallback component
-const PageLoader = () => (
-  <Center minH="100vh">
-    <Spinner
-      thickness="4px"
-      speed="0.65s"
-      emptyColor="gray.200"
-      color="#D10205"
-      size="xl"
-    />
-  </Center>
-)
-
-const toRouteObject = (route) => {
-  const Page = lazy(route.load)
-  return route.path === '/'
-    ? { index: true, element: <Page /> }
-    : { path: route.path, element: <Page /> }
-}
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    children: [...routes, notFoundRoute].map(toRouteObject),
-  },
-])
+const router = createBrowserRouter(routeObjects)
+const emotionCache = createEmotionCache()
 
 const App = () => {
   return (
-    <ChakraProvider theme={theme}>
-      <ErrorBoundary>
-        <Suspense fallback={<PageLoader />}>
-          <RouterProvider router={router} />
-        </Suspense>
-      </ErrorBoundary>
-    </ChakraProvider>
+    <AppShell emotionCache={emotionCache}>
+      <RouterProvider router={router} />
+    </AppShell>
   )
 }
 
