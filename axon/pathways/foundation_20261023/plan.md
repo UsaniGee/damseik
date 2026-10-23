@@ -21,7 +21,7 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Write `docs/audit/url-inventory.md`
 - [x] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
-## Phase 2: Site Config & Route Manifest
+## Phase 2: Site Config & Route Manifest [checkpoint: b5f8d0d]
 
 - [x] Task: Site configuration module (FR-2) 105d96f
     - [x] Write tests: `canonicalUrl()` builds `https://www.damseik.com` URLs, strips trailing slash (except root), lowercases host, ignores query/hash
@@ -37,11 +37,11 @@ build/render/Lighthouse verification for presentational changes)
 - [x] Task: Brand metadata correction (FR-9) b5f8d0d
     - [x] Update `index.html` and `StructuredData` to remove "Damsiek Limited" / "Dam Seik Services" as the site name and the `meta keywords` tag
     - [x] Verify with `grep` over `dist/` after build
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 3: Build-Time Prerendering & Status Codes
 
-- [ ] Task: Server render entry (FR-4)
+- [~] Task: Server render entry (FR-4)
     - [ ] Write test: rendering a manifest route server-side produces HTML containing its H1 and the head tags from `src/lib/seo.js`
     - [ ] Implement `src/entry-server.jsx` using `createStaticHandler` / `createStaticRouter` + `renderToPipeableStream` (`onAllReady`), with Chakra/Emotion style extraction
     - [ ] Guard browser-only code (`window`, `document`, Swiper, framer-motion) so SSR does not crash
