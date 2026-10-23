@@ -1,0 +1,4 @@
+Task: Record URL & SEO inventory (FR-1)
+Changes: docs/audit/url-inventory.md — 21 routes with status codes, metadata source, host/protocol redirects, soft-404, robots.txt and sitemap defects, site-wide SEO findings (no h1, client-only metadata, brand inconsistency, missing og:image, dead domain), unverified content claims.
+Why: spec §4.1 requires inventorying URLs before changing routes or metadata.
+Verification: curl status checks against https://www.damseik.com; source review of <SEO> usage and headings.
