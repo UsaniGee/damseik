@@ -2,3 +2,9 @@ Task: Brand metadata correction (FR-9)
 Changes: index.html (title/description/og tags -> Dam Seik home metadata, keywords removed, og:locale en_GB, favicon image/png 64px Cloudinary transform 6.5KB); public/manifest.json name/description; Logo aria-label/alt; Pageshero and OurClients alt templates. StructuredData was already removed in the SEO builder task.
 Deliberately unchanged (pathway 2 content review): body copy using 'Dam Seik Services Ltd/Limited' (may be legal-name usage), footer copyright line, testimonial quotes, FAQ copy.
 Verification: vite build OK; grep dist -> 0 'Damsiek', 0 keywords meta, 0 damseikservices; 32 tests pass.
+
+PHASE 2 CHECKPOINT — Site Config & Route Manifest
+Automated: CI=true npm run test:coverage -> 5 files, 32 tests passed; coverage src/config 100%, src/lib 100%, src/routes 100% (scripts/generate-sitemap.js 0% — rewritten with tests in Phase 4).
+Manual verification steps given: preview build; check head tags on /services/well-service, noindex on /services/procurement, trailing-slash and legacy mixed-case URLs render with lowercase canonical, contact email info@damseik.com, review manifest metadata.
+User confirmation: 'Yes, continue to Phase 3' (2026-10-23).
+Open dependency: damseik.com has no MX record; info@damseik.com bounces until mail hosting configured.
