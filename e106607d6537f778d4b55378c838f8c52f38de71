@@ -1,0 +1,4 @@
+Task: Server render entry (FR-4)
+Changes: src/entry-server.jsx render(url) -> {html, head, styles, status}; src/AppShell.jsx (CacheProvider+ChakraProvider+ErrorBoundary+Suspense); src/routes/routeObjects.jsx; src/lib/emotionCache.js (key 'css', compat on server); @emotion/server dev dependency. StaticRouterProvider hydrate={false} (no loaders, avoids extra script node in root). Status 404 derived from manifest.
+Browser-only code audit: no unguarded window/document/navigator access during render (Analytics guards with typeof window; SEO/Analytics DOM work is in effects). No SSR crash across tested routes.
+Verification: entry-server.test.jsx (node env) 4 tests red->green: h1 + canonical + emotion style tags on /services/well-service, no inline <style> in markup, 404 status/noindex/no canonical, homepage h1. React warning 'non-boolean attribute gri' found and fixed (AboutUs typo). 38 tests pass; new files lint-clean.
