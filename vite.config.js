@@ -44,7 +44,7 @@ const reactChunkFirstPlugin = () => {
   }
 }
 
-export default defineConfig({
+export default defineConfig(({ isSsrBuild }) => ({
   plugins: [
     tailwindcss(),
     react({
@@ -54,7 +54,8 @@ export default defineConfig({
   ],
   resolve: {
     dedupe: ['react', 'react-dom', 'scheduler'],
-    alias: {
+    // Aliasing React to a file path would bundle a second copy into the SSR build.
+    alias: isSsrBuild ? {} : {
       'react': resolve(__dirname, 'node_modules/react'),
       'react-dom': resolve(__dirname, 'node_modules/react-dom'),
     },
@@ -95,7 +96,7 @@ export default defineConfig({
           }
           return 'assets/[name]-[hash].js'
         },
-        manualChunks(id, { getModuleInfo }) {
+        manualChunks: isSsrBuild ? undefined : (id, { getModuleInfo }) => {
           if (id.includes('node_modules')) {
             if (
               id.includes('/react/') ||
@@ -162,4 +163,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))

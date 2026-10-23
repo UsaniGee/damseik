@@ -10,6 +10,8 @@ import { buildHead, headToHtml } from './lib/seo'
 import { findRoute, notFoundRoute } from './routes/manifest'
 import { routeObjects } from './routes/routeObjects'
 
+export { routes } from './routes/manifest'
+
 // Waits for every lazy route chunk to resolve, then returns the full markup.
 const renderToStringAsync = (element) =>
   new Promise((resolve, reject) => {
