@@ -1,0 +1,4 @@
+Task: Redirect map (FR-6)
+Changes: src/routes/redirects.js buildRedirects(routes) from manifest aliases (statusCode 301); vercel.json redirects for 2 mixed-case project URLs; docs/seo/redirects.md (old, new, reason, status, verification).
+Verification: 6 tests red->green (59 total): vercel.json equals buildRedirects, no chains/loops/homepage targets, indexable destinations only, cleanUrls/trailingSlash set, no rewrites. Local serve@14: /services/ and /about/ single 301 hop to 200.
+RISK FOUND: serve matches redirect sources case-insensitively -> lowercase destination redirects to itself (loop) locally. Vercel compiles sources with pathToRegexp sensitive:true (@vercel/routing-utils 5.3.3) but runtime case handling unconfirmed. Must verify on Vercel preview; fallback documented (prerendered copies at legacy paths with lowercase canonical).
