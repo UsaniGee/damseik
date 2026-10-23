@@ -68,12 +68,12 @@ build/render/Lighthouse verification for presentational changes)
 - [x] Task: Manifest-driven sitemap (FR-5) ef05599
     - [x] Write tests: sitemap includes only indexable manifest routes on `SITE_URL`, valid XML, excludes 404/noindex, `lastmod` only when set
     - [x] Rewrite `scripts/generate-sitemap.js` to consume the manifest; remove the committed stale `public/sitemap.xml`
-- [~] Task: Redirect map (FR-6)
-    - [ ] Write tests: redirect map has no chains or loops, no target is the homepage unless intended, every target is an indexable manifest route
-    - [ ] Implement redirects in `vercel.json` (trailing slash, case-variant project URL) and document in `docs/seo/redirects.md` (old, new, reason, status, verification)
-- [ ] Task: Vercel preview verification (moved from Phase 3)
+- [x] Task: Redirect map (FR-6) 5ec9c7a
+    - [x] Write tests: redirect map has no chains or loops, no target is the homepage unless intended, every target is an indexable manifest route
+    - [x] Implement redirects in `vercel.json` (trailing slash, case-variant project URL) and document in `docs/seo/redirects.md` (old, new, reason, status, verification)
+- [~] Task: Vercel preview verification (moved from Phase 3)
     - [ ] With user approval, push the branch for a Vercel preview deployment
-    - [ ] Verify on the preview: routes 200 with prerendered HTML, `/does-not-exist` 404, trailing-slash and legacy-URL redirects are single 301 hops, `robots.txt` is `text/plain`
+    - [ ] Verify on the preview: routes 200 with prerendered HTML, `/does-not-exist` 404, trailing-slash and legacy-URL redirects are single permanent hops, **lowercase canonical project URLs return 200 (no self-redirect loop)**, `robots.txt` is `text/plain`, `sitemap.xml` lists 15 URLs
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 5: Performance Fixes
