@@ -1,0 +1,4 @@
+Task: One H1 per page (plan amendment)
+Changes: Pageshero titleAs prop (default h1); ServicesHero/ProjectsHero pass titleAs='p' on detail routes; first Text of 14 detail pages rendered as h1; HeroSection first slide heading h1; NotFound 'Page Not Found' h1 (the decorative '404' becomes Text). Copy bugs fixed: process-instrumentation hero title 'Payment' -> 'OUR SERVICES'; Procurement body 'Equipment Leasing' -> 'Procurement'.
+Verification: Pageshero tests red->green (2); full suite 34 pass; vite build OK; CDP DOM check: all 21 routes have exactly 1 h1 with page-specific text (e.g. 'Pipeline Maintenance', 'UMU15 Well Intervention – Rivers State'), 0 console errors. Some first-pass CDP timeouts were caused by host CPU load (load avg 8.5) and passed on re-run at load 3.2.
+Note: h1 text quality on stubs (e.g. 'Quality control', 'Coating and Repair Product') is existing copy — pathway 2.
