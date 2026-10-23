@@ -3,6 +3,7 @@ import React from 'react'
 import ContactHero from './ContactHero'
 import ContactForm from './ContactForm'
 import SEO from '../../components/SEO'
+import { CONTACT_EMAIL } from '../../config/site'
 
 const Contact = () => {
   return (
@@ -25,8 +26,8 @@ const Contact = () => {
             <Text as="a" href="tel:+2348033433350">
             (+234) (0) 803 343 3350
             </Text>
-            <Text as="a" color="#D10205" href="mailto:inquiries@damseikservices.com">
-              inquiries@damseikservices.com
+            <Text as="a" color="#D10205" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
             </Text>
           </Box>
           <Box display={"grid"} gap={5}>
@@ -39,8 +40,8 @@ const Contact = () => {
             <Text as="a" href="tel:+2348033433350">
             (+234) (0)  803 343 3350
             </Text>
-            <Text as="a" color="#D10205" href="mailto:inquiries@damseikservices.com">
-              inquiries@damseikservices.com
+            <Text as="a" color="#D10205" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
             </Text>
           </Box>
           <Box>

@@ -10,6 +10,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import React from 'react';
+import { CONTACT_EMAIL } from '../../config/site';
 
 const FAQ = ({ faqs, title = "Frequently Asked Questions" }) => {
   const defaultFAQs = [
@@ -31,7 +32,7 @@ const FAQ = ({ faqs, title = "Frequently Asked Questions" }) => {
     },
     {
       question: "How can I contact Dam Seik Services?",
-      answer: "You can contact us through our contact form on the website, email us at inquiries@damseikservices.com, or call us at (+234) (0) 803 343 3350."
+      answer: `You can contact us through our contact form on the website, email us at ${CONTACT_EMAIL}, or call us at (+234) (0) 803 343 3350.`
     },
     {
       question: "Does Dam Seik Services provide emergency services?",

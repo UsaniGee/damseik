@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { CONTACT_EMAIL, SITE_URL } from '../../config/site';
 
 const StructuredData = ({ type = 'Organization', data }) => {
   useEffect(() => {
@@ -6,7 +7,7 @@ const StructuredData = ({ type = 'Organization', data }) => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Dam Seik Services Limited",
-      "url": typeof window !== 'undefined' ? window.location.origin : "https://damseikservices.com",
+      "url": SITE_URL,
       "logo": "https://res.cloudinary.com/dnu4lxiie/image/upload/v1744211989/Dam_Seik_Services_Limited_Logo_2-removebg-preview_xuimnd.png",
       "description": "Leading provider of oil & gas engineering solutions, pipeline services, well services, and marine support in Nigeria.",
       "address": {
@@ -20,13 +21,8 @@ const StructuredData = ({ type = 'Organization', data }) => {
         "@type": "ContactPoint",
         "telephone": "+234-803-343-3350",
         "contactType": "Customer Service",
-        "email": "inquiries@damseikservices.com"
-      },
-      "sameAs": [
-        "https://www.facebook.com/damseik",
-        "https://www.linkedin.com/company/damseik",
-        "https://twitter.com/damseik"
-      ]
+        "email": CONTACT_EMAIL
+      }
     };
 
     const schemaData = data || defaultOrganization;

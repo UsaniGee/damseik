@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { DEFAULT_OG_IMAGE, canonicalUrl as toCanonicalUrl } from '../../config/site';
 
 const SEO = ({ 
   title, 
@@ -9,11 +10,10 @@ const SEO = ({
   canonical 
 }) => {
   const siteName = "Dam Seik Services";
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : "https://damseikservices.com";
   const defaultTitle = `${title || "Home"} | ${siteName}`;
   const defaultDescription = description || "Dam Seik Services Limited - Leading provider of oil & gas engineering solutions, pipeline services, well services, and marine support in Nigeria.";
-  const defaultImage = ogImage || `${siteUrl}/og-image.jpg`;
-  const canonicalUrl = canonical || (typeof window !== 'undefined' ? `${siteUrl}${window.location.pathname}` : siteUrl);
+  const defaultImage = ogImage || DEFAULT_OG_IMAGE;
+  const canonicalUrl = toCanonicalUrl(canonical || (typeof window !== 'undefined' ? window.location.pathname : '/'));
 
   useEffect(() => {
     document.title = defaultTitle;

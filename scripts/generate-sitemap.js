@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { SITE_URL } from '../src/config/site.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const baseUrl = 'https://damseikservices.com'; 
+const baseUrl = SITE_URL;
 
 const routes = [
   { url: '/', changefreq: 'daily', priority: 1.0 },

@@ -19,6 +19,7 @@ import {
   } from "@chakra-ui/react";
   import { useForm } from "react-hook-form";
   import { useState } from "react";
+  import { CONTACT_EMAIL } from "../../../config/site";
   
   const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -93,8 +94,8 @@ import {
           <Text fontSize="md">
             If you want to contact us, please fill out the form or send an email
             to{" "}
-            <Text as="a" color="#D10205" href="mailto:inquiries@damseikservices.com">
-              inquiries@damseikservices.com
+            <Text as="a" color="#D10205" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
             </Text>
           </Text>
         </Box>
@@ -137,7 +138,7 @@ import {
                 <Box>
                   <AlertTitle>Error sending message</AlertTitle>
                   <AlertDescription>
-                    Please try again or email us directly at inquiries@damseikservices.com
+                    Please try again or email us directly at {CONTACT_EMAIL}
                   </AlertDescription>
                 </Box>
               </Alert>
