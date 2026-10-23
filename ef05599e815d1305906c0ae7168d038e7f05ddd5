@@ -1,0 +1,4 @@
+Task: Manifest-driven sitemap (FR-5)
+Changes: scripts/generate-sitemap.js rewritten: buildSitemap(routes) from manifest, indexable only, canonicalUrl locs, XML-escaped, optional lastmod (none declared yet, so none emitted instead of a fake build date), no changefreq/priority; main writes dist/sitemap.xml + dist/robots.txt. public/sitemap.xml deleted.
+Fixes: stale deployed sitemap (script wrote public/ after vite copied it); 21 -> 15 URLs (6 noindex stubs excluded).
+Verification: 7 tests red->green (53 total pass); scripts lint-clean; dist/sitemap.xml parses as XML; all 15 <loc> return 200 from serve@14 with cleanUrls.
