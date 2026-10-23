@@ -2,3 +2,9 @@ Task: Vercel routing & 404 (FR-4)
 Changes: vercel.json — removed rewrites /(.*) -> /index.html; added cleanUrls: true, trailingSlash: false.
 Verification: local equivalent with serve@14 (cleanUrls, trailingSlash false) — routes 200, /services/ 301 -> /services, /x.html 301 -> /x, unknown 404 with 404.html.
 Vercel preview verification deferred (user decision) until after Phase 4 redirects, because legacy mixed-case URLs need redirects before deploy. Plan sub-task left open and carried to Phase 4.
+
+PHASE 3 CHECKPOINT — Build-Time Prerendering & Status Codes
+Automated: CI=true npm run test:coverage -> 46 tests passed; src/config, src/lib, src/routes 100%; scripts/prerender.js 88% (CLI main exercised by npm run build).
+Manual verification steps given: npm run build (22 prerendered files), curl raw HTML for title/h1/canonical, visual check unchanged + navigation, /does-not-exist returns 404.
+User confirmation: 'Yes, continue to Phase 4' (2026-10-23).
+Open: Vercel preview verification moved to Phase 4.
