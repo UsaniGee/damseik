@@ -55,9 +55,10 @@ build/render/Lighthouse verification for presentational changes)
 - [x] Task: Prerender script (FR-4) ea0583c
     - [x] Write tests: script writes `dist/<path>/index.html` per indexable route and `dist/404.html`; injects head tags and rendered markup into the template
     - [x] Implement `scripts/prerender.js`; chain in `build` (`vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.js`)
-- [~] Task: Vercel routing & 404 (FR-4)
-    - [ ] Replace the SPA catch-all rewrite in `vercel.json`; set `cleanUrls`, `trailingSlash: false`
-    - [ ] Verify on a Vercel preview: indexable routes 200 with real HTML, `/does-not-exist` 404 with `404.html`
+- [x] Task: Vercel routing & 404 (FR-4) 9ab4367
+    - [x] Replace the SPA catch-all rewrite in `vercel.json`; set `cleanUrls`, `trailingSlash: false`
+    - [x] Verify locally with an equivalent static server (cleanUrls, no trailing slash): routes 200, `/does-not-exist` 404 with `404.html`
+    - [ ] Verify on a Vercel preview — deferred to Phase 4 (user decision), see Phase 4 task "Vercel preview verification"
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 4: robots.txt, Sitemap & Redirects
@@ -70,6 +71,9 @@ build/render/Lighthouse verification for presentational changes)
 - [ ] Task: Redirect map (FR-6)
     - [ ] Write tests: redirect map has no chains or loops, no target is the homepage unless intended, every target is an indexable manifest route
     - [ ] Implement redirects in `vercel.json` (trailing slash, case-variant project URL) and document in `docs/seo/redirects.md` (old, new, reason, status, verification)
+- [ ] Task: Vercel preview verification (moved from Phase 3)
+    - [ ] With user approval, push the branch for a Vercel preview deployment
+    - [ ] Verify on the preview: routes 200 with prerendered HTML, `/does-not-exist` 404, trailing-slash and legacy-URL redirects are single 301 hops, `robots.txt` is `text/plain`
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 5: Performance Fixes
