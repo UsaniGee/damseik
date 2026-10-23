@@ -23,10 +23,10 @@ build/render/Lighthouse verification for presentational changes)
 
 ## Phase 2: Site Config & Route Manifest
 
-- [ ] Task: Site configuration module (FR-2)
-    - [ ] Write tests: `canonicalUrl()` builds `https://www.damseik.com` URLs, strips trailing slash (except root), lowercases host, ignores query/hash
-    - [ ] Implement `src/config/site.js` (`SITE_URL` from `VITE_SITE_URL`, `BRAND_NAME = "Dam Seik"`, default OG image path)
-    - [ ] Replace all `damseikservices.com` references in `src/`, `scripts/`, `public/` with the config
+- [x] Task: Site configuration module (FR-2) 105d96f
+    - [x] Write tests: `canonicalUrl()` builds `https://www.damseik.com` URLs, strips trailing slash (except root), lowercases host, ignores query/hash
+    - [x] Implement `src/config/site.js` (`SITE_URL` from `VITE_SITE_URL`, `BRAND_NAME = "Dam Seik"`, default OG image path)
+    - [x] Replace all `damseikservices.com` references in `src/`, `scripts/`, `public/` with the config
 - [ ] Task: Route manifest (FR-3)
     - [ ] Write tests: every manifest path is unique, lowercase-safe, has title + description, matches an existing page; indexable routes exclude 404
     - [ ] Implement `src/routes/manifest.js` (path, lazy import, title, description, indexable, lastmod) seeded from existing page copy (no new claims)
