@@ -1,6 +1,7 @@
 import React from "react";
 import PagesHero from "../../../components/HeroSection/Pageshero";
 import { useLocation } from "react-router-dom";
+import { findRoute } from '../../../routes/manifest'
 
 
 
@@ -26,12 +27,12 @@ const projectsHero = {
   title: "PROJECTS",
   subtitle:  "UMU15 Well Intervention – Rivers State",
 } ,
-"/projects/high-Pressure-pumping-support-for-coil-tubing-operation-rivers-state": {
+"/projects/high-pressure-pumping-support-for-coil-tubing-operation-rivers-state": {
   image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746446912/What-is-Coiled-Tubing_yetqt5.webp",
   title: "PROJECTS",
   subtitle:  "High-Pressure Pumping Support for Coil Tubing Operation – Ubima, Rivers State",
 } ,
-"/projects/nitrogen-lift-operation-cawc-well-45T-rivers-state-swamp": {
+"/projects/nitrogen-lift-operation-cawc-well-45t-rivers-state-swamp": {
   image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746017625/WhatsApp_Image_2025-04-30_at_10.55.49_mkn9vp.jpg",
   title: "PROJECTS",
   subtitle:  "Nitrogen Lift Operation – CAWC Well 45T, Rivers State Swamp",
@@ -40,7 +41,7 @@ const projectsHero = {
 
 
 
-  let { title, subtitle, subtitle1, image } = projectsHero[location.pathname]
+  let { title, subtitle, subtitle1, image } = projectsHero[findRoute(location.pathname).path]
   return (
     <PagesHero
     imageSrc={image}

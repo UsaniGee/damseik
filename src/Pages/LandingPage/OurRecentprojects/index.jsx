@@ -26,14 +26,14 @@ export const projects = [
       "High-Pressure Pumping Support for Coil Tubing Operation – Ubima, Rivers State",
     subTitle:
       "Dam Seik Services Ltd successfully executed high-pressure pumping operations in Ubima, a key onshore oil-producing community in Rivers State. The project aimed to achieve a target well depth of 9,615 feet using coil tubing techniques, addressing challenges posed by downhole obstructions such as scale and mud accumulation.",
-    id: "/projects/high-Pressure-pumping-support-for-coil-tubing-operation-rivers-state",
+    id: "/projects/high-pressure-pumping-support-for-coil-tubing-operation-rivers-state",
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1752248671/IMG_0537_hbtoel.jpg",
     title: "Nitrogen Lift Operation – CAWC Well 45T, Rivers State Swamp",
     subTitle:
       "Dam Seik Services Ltd recently executed a nitrogen lift operation at CAWC Well 45T, located in the swamp terrain of Rivers State. The objective was to assist in unloading the well by displacing heavy fluid columns and enabling easier flowback, following a coil tubing intervention.",
-    id: "/projects/nitrogen-lift-operation-cawc-well-45T-rivers-state-swamp",
+    id: "/projects/nitrogen-lift-operation-cawc-well-45t-rivers-state-swamp",
   },
   {
     image: "https://res.cloudinary.com/dnu4lxiie/image/upload/v1746453400/WhatsApp_Image_2025-05-05_at_13.29.01_q5urwx.jpg",

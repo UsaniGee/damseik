@@ -1,6 +1,7 @@
 import React from "react";
 import PagesHero from "../../../components/HeroSection/Pageshero";
 import { useLocation } from "react-router-dom";
+import { findRoute } from '../../../routes/manifest'
 
 const ServicesHero = () => {
   const location = useLocation()
@@ -74,7 +75,7 @@ const ServicesHero = () => {
   }
 
 
-  let { title, subtitle, subtitle1, image } = pageData[location.pathname]
+  let { title, subtitle, subtitle1, image } = pageData[findRoute(location.pathname).path]
 
   return (
     <PagesHero
