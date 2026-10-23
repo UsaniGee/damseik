@@ -49,13 +49,13 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Write test: rendering a manifest route server-side produces HTML containing its H1 and the head tags from `src/lib/seo.js`
     - [x] Implement `src/entry-server.jsx` using `createStaticHandler` / `createStaticRouter` + `renderToPipeableStream` (`onAllReady`), with Chakra/Emotion style extraction
     - [x] Guard browser-only code (`window`, `document`, Swiper, framer-motion) so SSR does not crash
-- [~] Task: Client hydration (FR-4)
-    - [ ] In `src/main.jsx`, preload the current route's lazy chunk, then `hydrateRoot` (fallback to `createRoot` when no prerendered markup)
-    - [ ] Verify zero hydration warnings on every route in `npm run preview`
-- [ ] Task: Prerender script (FR-4)
-    - [ ] Write tests: script writes `dist/<path>/index.html` per indexable route and `dist/404.html`; injects head tags and rendered markup into the template
-    - [ ] Implement `scripts/prerender.js`; chain in `build` (`vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.js`)
-- [ ] Task: Vercel routing & 404 (FR-4)
+- [x] Task: Client hydration (FR-4) 687826c
+    - [x] In `src/main.jsx`, preload the current route's lazy chunk, then `hydrateRoot` (fallback to `createRoot` when no prerendered markup)
+    - [x] Verify zero hydration warnings on every route in `npm run preview`
+- [x] Task: Prerender script (FR-4) ea0583c
+    - [x] Write tests: script writes `dist/<path>/index.html` per indexable route and `dist/404.html`; injects head tags and rendered markup into the template
+    - [x] Implement `scripts/prerender.js`; chain in `build` (`vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.js`)
+- [~] Task: Vercel routing & 404 (FR-4)
     - [ ] Replace the SPA catch-all rewrite in `vercel.json`; set `cleanUrls`, `trailingSlash: false`
     - [ ] Verify on a Vercel preview: indexable routes 200 with real HTML, `/does-not-exist` 404 with `404.html`
 - [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
