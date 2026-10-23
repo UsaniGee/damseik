@@ -4,5 +4,17 @@
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "vite",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/projects/high-Pressure-pumping-support-for-coil-tubing-operation-rivers-state",
+      "destination": "/projects/high-pressure-pumping-support-for-coil-tubing-operation-rivers-state",
+      "statusCode": 301
+    },
+    {
+      "source": "/projects/nitrogen-lift-operation-cawc-well-45T-rivers-state-swamp",
+      "destination": "/projects/nitrogen-lift-operation-cawc-well-45t-rivers-state-swamp",
+      "statusCode": 301
+    }
+  ]
 }
