@@ -4,7 +4,7 @@ Pathway: `foundation_20261023` · Spec: [spec.md](./spec.md) ·
 Workflow: [workflow.md](../../workflow.md) (adapted TDD: tests first for logic;
 build/render/Lighthouse verification for presentational changes)
 
-## Phase 1: Tooling & Baseline Audit
+## Phase 1: Tooling & Baseline Audit [checkpoint: a4a9637]
 
 - [x] Task: Add test tooling f64fc91
     - [x] Install `vitest`, `@vitest/coverage-v8`, `jsdom`, `@testing-library/react`, `@testing-library/jest-dom` (dev)
@@ -19,7 +19,7 @@ build/render/Lighthouse verification for presentational changes)
 - [x] Task: Record URL & SEO inventory (FR-1) a4a9637
     - [x] For every route in `src/App.jsx` + live sitemap: status code, title, description, canonical, H1
     - [x] Write `docs/audit/url-inventory.md`
-- [ ] Task: Phase Verification & Checkpoint (Refer to workflow.md)
+- [x] Task: Phase Verification & Checkpoint (Refer to workflow.md)
 
 ## Phase 2: Site Config & Route Manifest
 
