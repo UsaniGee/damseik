@@ -1,0 +1,4 @@
+Task: Record performance baseline (FR-1)
+Changes: docs/audit/baseline.md — Lighthouse 12.6.1 lab results (6 routes x mobile/desktop x 3 runs, median), bundle composition via rollup-plugin-visualizer (temporary, not committed), render-blocking resources, heaviest requests, prioritized bottleneck list.
+Why: spec §3.1.1 requires measuring before optimizing.
+Verification: documentation task; numbers taken from Lighthouse JSON reports. Field data unavailable (PSI 429, no Search Console/GA access) — stated in doc. /contact desktop has 1 valid run of 3.
