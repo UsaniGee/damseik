@@ -17,7 +17,7 @@ const NitrogenLiftProject = () => {
        </Box>
        <Box px={{md: 24, base: 5}} w={"80%"}>
         <Grid pb={5}>
-        <Text>
+        <Text as="h1">
         Nitrogen Lift Operation – CAWC Well 45T, Rivers State Swamp
         </Text>
         <Text>

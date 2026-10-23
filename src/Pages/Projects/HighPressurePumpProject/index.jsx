@@ -17,7 +17,7 @@ const HighPressurePumpProject = () => {
          </Box>
          <Box px={{md: 24, base: 5}} w={"80%"}>
           <Grid pb={5}>
-          <Text fontSize={"20px"}> 
+          <Text as="h1" fontSize={"20px"}> 
             High-Pressure Pumping Support for Coil Tubing Operation – Ubima, Rivers State
           </Text>
           <Text>

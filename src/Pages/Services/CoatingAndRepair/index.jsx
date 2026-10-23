@@ -6,7 +6,7 @@ const CoatingAndRepair = () => {
   return (
     <Box  >
     <ServicesHero />
-    <Text>
+    <Text as="h1">
         Coating and Repair Product
     </Text>
  </Box>

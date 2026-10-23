@@ -134,6 +134,7 @@ const HeroSection = () => {
 
                 <MotionBox variants={childVariants} mb={4}>
                   <Heading
+                    as={index === 0 ? "h1" : "h2"}
                     fontSize={{ base: "2rem", md: "4rem" }}
                     fontWeight="800"
                     lineHeight="1.2"

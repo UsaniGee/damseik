@@ -19,7 +19,7 @@ const WellInterventionProject = () => {
        </Box>
        <Box px={{lg: 2, base: 5}} >
         <Grid pb={5}>
-        <Text>
+        <Text as="h1">
           UMU15 Well Intervention – Rivers State
         </Text>
         <Text>

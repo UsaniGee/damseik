@@ -18,7 +18,7 @@ const WaterInjection = () => {
          </Box>
          <Box px={{md: 1, base: 5}} w={"80%"}>
           <Grid pb={5}>
-          <Text>
+          <Text as="h1">
           Water Re-Injection Project – Umusadege 1, Kwale, Delta State 
           </Text>
           <Text>

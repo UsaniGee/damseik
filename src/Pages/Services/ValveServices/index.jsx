@@ -6,7 +6,7 @@ const ValveServices = () => {
   return (
     <Box  >
     <ServicesHero />
-    <Text>
+    <Text as="h1">
        Valve Services
     </Text>
  </Box>

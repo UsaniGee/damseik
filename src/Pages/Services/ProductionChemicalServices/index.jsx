@@ -10,7 +10,7 @@ const ProductionChemicalServices  = () => {
         <Image src='' alt=''/>
 <Grid gap={5}>
 
-    <Text fontSize={"24px"} fontWeight={600}>
+    <Text as="h1" fontSize={"24px"} fontWeight={600}>
     Production Chemical Services
     </Text>
     <Text fontSize={"16px"}>

@@ -6,8 +6,8 @@ const Procurement = () => {
   return (
     <Box  >
     <ServicesHero />
-    <Text>
-        Equipment Leasing
+    <Text as="h1">
+        Procurement
     </Text>
  </Box>
   )

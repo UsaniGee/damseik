@@ -46,6 +46,7 @@ const projectsHero = {
     <PagesHero
     imageSrc={image}
       title={title}
+      titleAs={findRoute(location.pathname).path === "/projects" ? "h1" : "p"}
       // subtitle={subtitle}
       // subtitle1={subtitle1}
       breadcrumb={[

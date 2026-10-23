@@ -6,7 +6,7 @@ const QualityControl = () => {
   return (
     <Box  >
     <ServicesHero />
-    <Text>
+    <Text as="h1">
         Quality control
     </Text>
  </Box>

@@ -6,7 +6,7 @@ const ProcessInstrumentation = () => {
   return (
     <Box  >
     <ServicesHero />
-    <Text>
+    <Text as="h1">
         Process Instrumentation
     </Text>
  </Box>

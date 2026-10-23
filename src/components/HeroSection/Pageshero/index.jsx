@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb, ctaText, ctaLink }) => {
+const PagesHero = ({ imageSrc, title, titleAs = "h1", subtitle, subtitle1, breadcrumb, ctaText, ctaLink }) => {
   return (
     <Box position="relative" w="100%" h={{ base: "420px", md: "520px" }} overflow="hidden">
   
@@ -61,6 +61,7 @@ const PagesHero = ({ imageSrc, title, subtitle, subtitle1, breadcrumb, ctaText, 
       >
         {/* Main Title */}
         <Text
+          as={titleAs}
           fontSize={{ base: "28px", md: "56px", lg: "64px" }}
           fontWeight="extrabold"
           lineHeight={{ base: "36px", md: "72px" }}

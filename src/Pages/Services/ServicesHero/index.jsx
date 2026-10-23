@@ -25,7 +25,7 @@ const ServicesHero = () => {
        image: ""
     },
     "/services/process-instrumentation": {
-      title: "Payment",
+      title: "OUR SERVICES",
       subtitle:
         "Process Instrumentation",
        image: ""
@@ -81,6 +81,7 @@ const ServicesHero = () => {
     <PagesHero
     imageSrc={image}
       title={title}
+      titleAs={findRoute(location.pathname).path === "/services" ? "h1" : "p"}
       breadcrumb={[
         { label: "Home", link: "/" },
         { label: "Services", link: "/services" }

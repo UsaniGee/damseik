@@ -10,7 +10,7 @@ const PipelineFacility = () => {
         <Image src='' alt=''/>
 <Grid gap={5}>
 
-    <Text fontSize={"24px"} fontWeight={600}>
+    <Text as="h1" fontSize={"24px"} fontWeight={600}>
     Pipeline Maintenance
     </Text>
     <Text fontSize={"16px"}>

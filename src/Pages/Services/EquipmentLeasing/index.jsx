@@ -6,7 +6,7 @@ const EquipmentLeasing = () => {
   return (
 <Box  >
     <ServicesHero />
-    <Text>
+    <Text as="h1">
         Equipment Leasing
     </Text>
  </Box>

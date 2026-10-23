@@ -13,15 +13,16 @@ const NotFound = () => {
       px={5}
     >
       <VStack spacing={8} textAlign="center" maxW="600px">
-        <Heading
+        <Text
           fontSize={{ base: "6xl", md: "8xl" }}
           fontWeight="bold"
           color="#D10205"
           lineHeight="1"
         >
           404
-        </Heading>
+        </Text>
         <Heading
+          as="h1"
           fontSize={{ base: "2xl", md: "3xl" }}
           fontWeight="semibold"
           color="gray.800"
