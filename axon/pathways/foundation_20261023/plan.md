@@ -31,9 +31,9 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Write tests: every manifest path is unique, lowercase-safe, has title + description, matches an existing page; indexable routes exclude 404
     - [x] Implement `src/routes/manifest.js` (path, lazy import, title, description, indexable, lastmod) seeded from existing page copy (no new claims)
     - [x] Refactor `src/App.jsx` to build the router from the manifest; verify every existing URL still renders
-- [ ] Task: SEO tag builder
-    - [ ] Write tests: builder returns title, description, canonical, robots, OG/Twitter tags, JSON-LD for a manifest entry; brand is "Dam Seik"; no `keywords` tag
-    - [ ] Implement `src/lib/seo.js`; refactor `src/components/SEO` to use it
+- [x] Task: SEO tag builder 6047d63
+    - [x] Write tests: builder returns title, description, canonical, robots, OG/Twitter tags, JSON-LD for a manifest entry; brand is "Dam Seik"; no `keywords` tag
+    - [x] Implement `src/lib/seo.js`; refactor `src/components/SEO` to use it
 - [ ] Task: Brand metadata correction (FR-9)
     - [ ] Update `index.html` and `StructuredData` to remove "Damsiek Limited" / "Dam Seik Services" as the site name and the `meta keywords` tag
     - [ ] Verify with `grep` over `dist/` after build
