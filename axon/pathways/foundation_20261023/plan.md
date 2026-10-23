@@ -45,11 +45,11 @@ build/render/Lighthouse verification for presentational changes)
     - [x] Write test: `Pageshero` renders its title as the page's only `h1`
     - [x] Render `Pageshero` title as `h1` (no visual change) and the homepage hero's first slide heading as `h1`
     - [x] Verify exactly one `h1` per route in the rendered DOM
-- [~] Task: Server render entry (FR-4)
-    - [ ] Write test: rendering a manifest route server-side produces HTML containing its H1 and the head tags from `src/lib/seo.js`
-    - [ ] Implement `src/entry-server.jsx` using `createStaticHandler` / `createStaticRouter` + `renderToPipeableStream` (`onAllReady`), with Chakra/Emotion style extraction
-    - [ ] Guard browser-only code (`window`, `document`, Swiper, framer-motion) so SSR does not crash
-- [ ] Task: Client hydration (FR-4)
+- [x] Task: Server render entry (FR-4) e106607
+    - [x] Write test: rendering a manifest route server-side produces HTML containing its H1 and the head tags from `src/lib/seo.js`
+    - [x] Implement `src/entry-server.jsx` using `createStaticHandler` / `createStaticRouter` + `renderToPipeableStream` (`onAllReady`), with Chakra/Emotion style extraction
+    - [x] Guard browser-only code (`window`, `document`, Swiper, framer-motion) so SSR does not crash
+- [~] Task: Client hydration (FR-4)
     - [ ] In `src/main.jsx`, preload the current route's lazy chunk, then `hydrateRoot` (fallback to `createRoot` when no prerendered markup)
     - [ ] Verify zero hydration warnings on every route in `npm run preview`
 - [ ] Task: Prerender script (FR-4)
